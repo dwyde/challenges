@@ -14,7 +14,7 @@ RUN useradd --create-home scoreboard
 WORKDIR /home/scoreboard
 
 # Copy the app in
-COPY docker-compose.yml scoreboard/ /home/scoreboard/
+COPY . /home/scoreboard/
 RUN chown -R scoreboard /home/scoreboard/challenges/migrations
 
 # Switch users

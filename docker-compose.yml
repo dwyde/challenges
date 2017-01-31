@@ -1,9 +1,7 @@
 version: '2.1'
 services:
     scoreboard:
-        build:
-            context: .
-            dockerfile: scoreboard/Dockerfile
+        build: scoreboard
         ports: ['9000:9000']
     web-clicks:
         build: challenges/web-clicks
