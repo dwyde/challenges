@@ -1,0 +1,6 @@
+{
+    "basescore" : 250,
+    "desc" : "<p>Python's <code>yaml.load</code> is dangerous, and can lead to code execution bugs. Can you get a flag from a <a href=\"${STATIC_PATH}yam.py\">constrained call</a> to this function?</p><p><code>nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p>",
+    "displayname" : "Python - Yam",
+    "flag": "flag{see_deserialization_can_be_safe}"
+}

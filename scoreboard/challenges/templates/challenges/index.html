@@ -1,0 +1,14 @@
+<h2>Welcome to the CTF</h2>
+<p>You are logged in as <em>{{ user }}</em>.</p>
+
+<p><b>The challenges are available <a href="/challenges/">here</a>.</b></p>
+
+<p><b>Note #1:</b> flags look like <code>flag{...}</code>. Good luck!</p>
+
+<p><b>Note #2:</b> some challenges are accessible via HTTP, while others are custom network services.
+<br> For the latter category, you might want to use
+<a href="/static/client.py">this script</a> to ensure that
+your connection doesn't hang.
+<br>You can use it like this:</p>
+
+<p><code>echo YOUR_SOLUTION | python3 client.py CHALLENGE_HOST CHALLENGE_PORT</code></p>

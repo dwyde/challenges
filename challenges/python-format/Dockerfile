@@ -1,0 +1,29 @@
+# Use the Python 2 image
+FROM python:3.5
+
+MAINTAINER David Wyde (david.wyde@gmail.com)
+
+# Install extra software
+RUN apt-get update
+RUN apt-get install -y socat
+RUN pip3 install pyyaml
+
+# Add the user
+RUN useradd --create-home challenge
+
+# Copy the app in
+COPY format.py flag.py wrapper.sh /home/challenge/
+RUN chown root:root /home/challenge/format.py /home/challenge/flag.py /home/challenge/wrapper.sh
+RUN chmod 644 /home/challenge/format.py /home/challenge/flag.py
+RUN chmod 755 /home/challenge/wrapper.sh
+
+# Switch users
+USER challenge
+
+# Set our working directory
+WORKDIR /home/challenge
+
+# Run the app
+EXPOSE 7777
+CMD ["socat", "tcp-l:7777,reuseaddr,fork", "system:'./wrapper.sh',stderr,nofork"]
+

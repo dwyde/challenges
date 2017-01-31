@@ -1,0 +1,6 @@
+{
+    "basescore" : 200,
+    "desc" : "<p>Enter a Python expression that evaluates to the <code>type</code> object.</p><p><code>echo 'solution' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>Use the <a href=\"${STATIC_PATH}challenge.py\">source</a>.</p>",
+    "displayname" : "Python - Lost Type",
+    "flag": "flag{hope_this_was_your_type_of_challenge}"
+}

@@ -1,0 +1,59 @@
+version: '2.1'
+services:
+    scoreboard:
+        build:
+            context: .
+            dockerfile: scoreboard/Dockerfile
+        ports: ['9000:9000']
+    web-clicks:
+        build: challenges/web-clicks
+        ports: ['9001:80']
+    web-tags:
+        build: challenges/web-tags
+        ports: ['9002:80']
+    web-admin:
+        build: challenges/web-admin
+        ports: ['9003:8888']
+    crypto-algebraic:
+        build: challenges/crypto-algebraic
+        ports: ['9004:8888']
+    web-sandbox:
+        build: challenges/web-sandbox
+        ports: ['9005:7777']
+    python-zero:
+        build: challenges/python-zero
+        ports: ['9006:8888']
+    python-alphabet:
+        build: challenges/python-alphabet
+        ports: ['9007:8888']
+    python-set-up:
+        build: challenges/python-set-up
+        ports: ['9008:8888']
+    python-arguments:
+        build: challenges/python-arguments
+        ports: ['9009:7777']
+    python-sandbox:
+        build: challenges/python-sandbox
+        ports: ['9010:7777']
+    python-yam:
+        build: challenges/python-yam
+        ports: ['9011:7777']
+    python-format:
+        build: challenges/python-format
+        ports: ['9012:7777']
+    web-sqli:
+        build: challenges/web-sqli
+        ports: ['9013:8888']
+    web-sequel:
+        build: challenges/web-sequel
+        ports: ['9014:8888']
+    web-hidden:
+        build: challenges/web-hidden
+        ports: ['9015:80']
+    web-guestbook:
+        build: challenges/web-guestbook
+        ports: ['9016:8080']
+    python-type:
+        build: challenges/python-type
+        ports: ['9017:7777']
+
