@@ -10,7 +10,7 @@ Everything you need should be in the dashboard.
 ## Setup
 1. Install Python 3 and pip
 1. `pip3 install --upgrade docker-compose pyyaml`
-1. sudo ./run.sh # sudo or add yourself to the docker group...
+1. `sudo ./run.sh # sudo or add yourself to the docker group...`
 1. Browse to port 9000 on your Docker IP (e.g., http://172.17.0.1:9000/)
 
 Tested on Arch Linux with Python 3.6
