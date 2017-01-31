@@ -1,1 +1,1 @@
-docker-compose -p ctf up -d --build
+docker-compose up -d --build
