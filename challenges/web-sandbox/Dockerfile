@@ -1,4 +1,3 @@
-# Use the Python 2 image
 FROM node:6
 
 MAINTAINER David Wyde (david.wyde@gmail.com)

@@ -1,4 +1,3 @@
-# Use the Python 2 image
 FROM python:3.5
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
