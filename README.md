@@ -15,6 +15,10 @@ Everything you need should be in the dashboard.
 
 Tested on Arch Linux with Python 3.6
 
+**NOTE:** Ubuntu's `pip` puts docker-compose in `~/.local/bin/docker-compose`.
+You'll want to do `sudo ~/.local/bin/docker-compose up -d --build` instead
+of `./run.sh`.
+
 ## Development
 If you change challenge metadata, please run `./prepare_scoreboard.py`.
 This collects static files and database entries for the scoreboard.
