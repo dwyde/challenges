@@ -112,7 +112,7 @@
   pk: 17
 - fields: {description: '<p><a href="/static/crypto-music/music.png">Music notes</a>
       encode a 32-character flag. Your submission should look like <code>flag{...}</code>.</p>',
-    display_name: Crypto - Music, flag: 'flag{cedeafadeddecadeadeadfacadeebbed}',
+    display_name: Crypto - Music, flag: 'flag{cafebabefeedfacedeadbeeffadefade}',
     name: crypto-music, points: 50, port: '9018'}
   model: challenges.challenge
   pk: 18
