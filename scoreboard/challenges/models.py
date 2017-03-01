@@ -22,7 +22,7 @@ class Challenge(models.Model):
             return 'Please authenticate.'
         
         # FIXME: constant-time compare?
-        if self.flag == flag:
+        if self.flag.lower() == flag.lower():
             self.solved.add(user)
             return 'Correct!'
         else:
