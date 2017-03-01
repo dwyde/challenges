@@ -2,5 +2,6 @@
     "basescore" : 400,
     "desc" : "<p>Everybody enjoys signing <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">online guestbooks</a>, and webmasters love to read them.</p><p>Your task is to use an XSS bug to set the `XSS` JavaScript variable.  A bot monitors this value, and will give you the flag if you succeed.</p><p>As a security measure, you have a very limited set of characters available.  Specifically, you can use <code>&gt;</code>, <code>&lt;</code>, <code>A-Z</code>, <code>=</code>, <code>/</code>, and <code>-</code>.</p>",
     "displayname": "Web - Guestbook",
-    "flag": "flag{be_our_guest_be_our_guest}"
+    "flag": "flag{be_our_guest_be_our_guest}",
+    "port": 8080
 }

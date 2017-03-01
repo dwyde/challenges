@@ -2,5 +2,6 @@
     "basescore" : 200,
     "desc" : "<p>There is a flag encoded in this <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">HTML page</a>.</p><p>One element doesn't fit the pattern, but it's still important!</p>",
     "displayname" : "Web - Tags",
-    "flag": "flag{nonsense_next_zeiodvpsymwrkc}"
+    "flag": "flag{nonsense_next_zeiodvpsymwrkc}",
+    "port": 80
 }

@@ -20,7 +20,7 @@ You'll want to do `sudo ~/.local/bin/docker-compose up -d --build` instead
 of `./run.sh`.
 
 ## Development
-If you change challenge metadata, please run `./prepare_scoreboard.py`.
+If you change challenge metadata, please run `config/prepare_scoreboard.py`.
 This collects static files and database entries for the scoreboard.
 
 Then, you can do `./run.sh` as normal.

@@ -2,5 +2,6 @@
     "basescore" : 300,
     "desc" : "<p>Inject arguments into a system command: <code>echo 'solution' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/python-arguments/arguments.py\">source</a></p>",
     "displayname" : "Python - Arguments",
-    "flag": "flag{hope_the_argument_was_not_too_loud}"
+    "flag": "flag{hope_the_argument_was_not_too_loud}",
+    "port": 7777
 }

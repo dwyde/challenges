@@ -2,5 +2,6 @@
     "basescore" : 100,
     "desc" : "<p>You've come across a ninja belt <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">inventory system</a>. Can you find any way to dump its database?</p>",
     "displayname" : "Web - SQL Injection",
-    "flag": "flag{pr3p4r3d_stmts_r_th3_b3st}"
+    "flag": "flag{pr3p4r3d_stmts_r_th3_b3st}",
+    "port": 8888
 }

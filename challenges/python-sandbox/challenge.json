@@ -2,5 +2,6 @@
     "basescore" : 500,
     "desc" : "<p>Read a flag from a partially-implemented Python <a href=\"/static/python-sandbox/sandbox.py\">sandbox</a>.</p><p><code>echo 'solution' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p>",
     "displayname" : "Python - Sandbox",
-    "flag": "flag{that_is_not_what_decorators_are_for}"
+    "flag": "flag{that_is_not_what_decorators_are_for}",
+    "port": 7777
 }
