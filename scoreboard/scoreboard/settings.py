@@ -122,5 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Scoreboard-specific settings
-DEFAULT_USERNAME = 'ctf'
-DEFAULT_PASSWORD = 'give_me_flags'
+AUTH_USER_MODEL = 'challenges.AutoUser'
+
+# Roughly 10 years
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 10
