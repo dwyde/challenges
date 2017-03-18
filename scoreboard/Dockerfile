@@ -23,7 +23,6 @@ USER scoreboard
 RUN ./manage.py makemigrations
 RUN ./manage.py migrate
 RUN ./manage.py loaddata challenges
-RUN ./manage.py create_default_admin
 
 # Run the app
 CMD ["./manage.py", "runserver", "0.0.0.0:9000"]

@@ -64,10 +64,31 @@ class AutoUser(AbstractBaseUser):
 
     user_id = models.CharField(max_length=36, unique=True)
 
+    # Django Admin support
+    is_superuser = models.BooleanField(default=False)
+
     def __init__(self, *args, **kwargs):
         user_id = str(uuid.uuid4())
-        print(args, kwargs)
         super().__init__(user_id=user_id, *args, **kwargs)
 
     def __str__(self):
         return 'user_%d' % (self.id,)
+
+    # Django admin support
+
+    def __repr__(self):
+        return self.user_id
+
+    def has_perm(self, perm, obj=None):
+        return self.is_superuser
+
+    def has_module_perms(self, app_label):
+        return self.is_superuser
+
+    @property
+    def is_staff(self):
+        return self.is_superuser
+
+    def get_short_name(self):
+        return str(self)
+
