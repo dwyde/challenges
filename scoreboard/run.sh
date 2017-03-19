@@ -1,5 +1,4 @@
 python3 ./manage.py makemigrations challenges
 python3 ./manage.py migrate
 python3 ./manage.py loaddata challenges
-python3 ./manage.py create_default_admin
 python3 ./manage.py runserver

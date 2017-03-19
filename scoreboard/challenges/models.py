@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 
-from django.contrib.auth.models import User
+import uuid
+
+from django.conf import settings
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 
 class Challenge(models.Model):
@@ -14,7 +17,7 @@ class Challenge(models.Model):
     port = models.IntegerField()
     description = models.TextField()
     flag = models.CharField(max_length=128)
-    solved = models.ManyToManyField(User, blank=True)
+    solved = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
     instructions = models.CharField(max_length=64, blank=True, null=True)
 
     def check_flag(self, user, flag):
@@ -40,4 +43,52 @@ class Challenge(models.Model):
 
     def __str__(self):
         return 'Challenge: {}'.format(self.name)
+
+
+class AutoUserManager(BaseUserManager):
+
+    def create_user(self, **kwargs):
+        instance = self.model(**kwargs)
+        instance.save()
+        return instance
+
+    def create_superuser(self, **kwargs):
+        return self.create_user(is_superuser=True)
+
+
+class AutoUser(AbstractBaseUser):
+
+    objects = AutoUserManager()
+
+    USERNAME_FIELD = 'user_id'
+
+    user_id = models.CharField(max_length=36, unique=True)
+
+    # Django Admin support
+    is_superuser = models.BooleanField(default=False)
+
+    def __init__(self, *args, **kwargs):
+        user_id = str(uuid.uuid4())
+        super().__init__(user_id=user_id, *args, **kwargs)
+
+    def __str__(self):
+        return 'user_%d' % (self.id,)
+
+    # Django admin support
+
+    def __repr__(self):
+        return self.user_id
+
+    def has_perm(self, perm, obj=None):
+        return self.is_superuser
+
+    def has_module_perms(self, app_label):
+        return self.is_superuser
+
+    @property
+    def is_staff(self):
+        return self.is_superuser
+
+    def get_short_name(self):
+        return str(self)
 

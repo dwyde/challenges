@@ -1,17 +1,16 @@
 from django.conf import settings
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login, get_user_model
 
 
 class AuthenticationMiddleware(object):
-    # FIXME: automatically log in as a default user.
 
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
         if not request.user.is_authenticated():
-            user = authenticate(username=settings.DEFAULT_USERNAME,
-                                password=settings.DEFAULT_PASSWORD)
+            model = get_user_model()
+            user = model.objects.create_user()
             login(request, user)
 
         response = self.get_response(request)
