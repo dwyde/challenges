@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 
-
 class Challenge(models.Model):
 
     class Meta:
@@ -16,6 +15,7 @@ class Challenge(models.Model):
     description = models.TextField()
     flag = models.CharField(max_length=128)
     solved = models.ManyToManyField(User, blank=True)
+    instructions = models.CharField(max_length=64, blank=True, null=True)
 
     def check_flag(self, user, flag):
         if not user.is_authenticated():

@@ -1,39 +1,37 @@
+{% extends "challenges/base.html" %}
+
+{% block title %} Scoreboard {% endblock %}
+
+{% block content %}
+
 {% load scoreboard %}
-<head>
-<style>
-.solved {
-    color: green;
-    font-weight: bold;
-}
-.unsolved {
-    color: red;
-    font-weight: bold;
-}
-</style>
-</head>
-<p>Hi, <em>{{ user }}</em>!</p>
-<p>You have {{ points }} total points</p>
-<hr>
-{% for challenge in challenges %}
-<div>
-    <p>{{ challenge.display_name }}:
-    {% if challenge.pk in solved %}
-    <span class="solved">Solved</span>
-    {% else %}
-    <span class="unsolved">Not Solved</span>
-    {% endif %}
-    </p>
-    <p>{{ challenge.points }} points</p>
-    <p>{{ challenge | ctf_describe:request | safe }}</p>
-    <p>
-    <form method="POST" action="{{ challenge.pk }}/">
-        <input type="text" name="flag">
-        <input type="submit" value="Submit flag">
-        {% csrf_token %}
-    </form>
-    </p>
-    <p>
-    </p>
-</div>
-<hr>
-{% endfor %}
+  <div>
+    C:\> dir c:\challenges\*.exe<br>
+
+    <br>
+    &nbsp; Username: {{ user }}<br>
+    &nbsp; Points : {{ points }}<br>
+    <br>
+
+    &nbsp; Challenges:
+    <br><br>
+    {% for challenge in challenges %}
+
+      &nbsp;
+      &nbsp;
+      <a href="{{ challenge.pk }}">{{ challenge.display_name }}</a>
+      {{ challenge.points }} points
+      {% if challenge.pk in solved %}
+        <span class="solved">(Solved)</span>
+      {% endif %}
+      <br>
+
+    {% endfor %}
+
+    <br>
+    C:\>
+    <br>
+
+  </div>
+
+{% endblock %}

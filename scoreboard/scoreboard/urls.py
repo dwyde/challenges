@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^challenges/$', views.list_challenges),
-    url(r'^challenges/(\d+)/$', views.solve_challenge),
+    url(r'^challenges/(\d+)/$', views.show_challenge),
 ]

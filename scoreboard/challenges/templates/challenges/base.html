@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+
+    body {
+      background: black;
+      color: green;
+      font-family: monospace;
+    }
+
+    a {
+      color: #bbbbbb;
+    }
+
+    .command-text {
+      color: #bbbbbb;
+      background: #111111;
+      width: 80%;
+      margin: 0px 0px 0px 20px;
+      padding: 10px 10px 10px 10px;
+    }
+
+    .info-text {
+      margin: 0px 0px 0px 14px;
+      padding: 10px 10px 10px 10px;
+    }
+
+    .description {
+      color: #bbbbbb;
+      width: 80%;
+      margin: 0px 0px 0px 14px;
+      padding: 2px 0px 2px 0px;
+    }
+
+    input {
+      background: #00aa00;
+      font-family: monospace;
+      color: #000000;
+      border: none;
+    }
+
+    .solved {
+      color: #00ff00;
+    }
+
+    .unsolved {
+      color: #ff0000;
+    }
+
+    </style>
+  </head>
+  <body>
+    <h2>{% block title %} {% endblock %}</h2>
+    {% block content %} {% endblock %}
+  </body>
+</html>

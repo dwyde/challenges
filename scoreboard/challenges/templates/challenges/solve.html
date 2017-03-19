@@ -1,3 +1,19 @@
-{{ message }}
-<hr>
-<a href="/challenges">Back to the challenge listing</a>
+{% extends "challenges/base.html" %}
+
+{% block title %} {{ challenge.display_name }} {% endblock %}
+
+{% block content %}
+
+  <pre>
+  C:\> solve.exe
+  
+    Enter challenge name: {{ challenge.pk }}
+    Enter challenge solution: {{ flag }}
+  
+    >> <font color="#00ff00">{{ message }}</font>
+  </pre>
+  
+  <br>
+  <a href="/challenges">Back to the challenge listing</a>
+
+{% endblock %}
