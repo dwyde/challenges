@@ -31,7 +31,7 @@ def show_challenge(request, challenge_id):
     else:
         # User is requesting challenge details only.
 
-        if challenge.solved.filter(username=request.user):
+        if challenge.solved.filter(pk=request.user.pk):
             context = { 'challenge': challenge, 'solved': True }
         else:
             context = { 'challenge': challenge, 'solved': False }
