@@ -1,0 +1,42 @@
+{% extends "challenges/base.html" %}
+
+{% block title %} {{ challenge.display_name }} {% endblock %}
+
+{% block content %}
+
+{% load scoreboard %}
+
+  <div>
+    Status:
+    {% if solved is True %}
+      <span class="solved">Solved</span>
+    {% else %}
+      <span class="unsolved">Not Solved</span>
+    {% endif %}
+    <br>
+
+    Points: {{ challenge.points }} points<br>
+
+    <div class="description">
+      {{ challenge | ctf_describe:request | safe }}
+      {% if instructions %}
+        <hr>
+        {% include instructions %}
+        <br>
+      {% endif %}
+    </div>
+
+    <form method="POST">
+      INPUT SOLUTION>
+      {% if solved is True %}
+        <input type="text" name="flag" value="ALREADY SOLVED" disabled=True>
+      {% else %}
+        <input type="text" name="flag" value="flag{}" onclick="this.value=''">
+      {% endif %}
+      {% csrf_token %}
+    </form>
+  </div>
+
+  Back to the <a href="..">scoreboard</a>.
+
+{% endblock %}
