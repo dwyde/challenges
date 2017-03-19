@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'challenges/index.html')
 
 def list_challenges(request):
-    challenges = Challenge.objects.all().order_by('display_name')
+    challenges = Challenge.objects.all()
     solved, points = Challenge.solved_by_user(request.user)
     context = {'challenges': challenges, 'solved': solved, 'points': points}
 
