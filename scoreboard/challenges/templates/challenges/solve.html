@@ -1,19 +1,20 @@
 {% extends "challenges/base.html" %}
 
-{% block title %} {{ challenge.display_name }} {% endblock %}
+{% block title %} <span class="highlight-text">{{ challenge.display_name }}</span> {% endblock %}
 
 {% block content %}
 
   <pre>
-  C:\> solve.exe
+    ] SOLVE
   
-    Enter challenge name: {{ challenge.pk }}
-    Enter challenge solution: {{ flag }}
+      Enter challenge ID: {{ challenge.pk }}
+      Enter challenge flag: {{ flag }}
   
-    >> <font color="#00ff00">{{ message }}</font>
+      >> <font color="#00ff00">{{ message }}</font>
+
+    ]
   </pre>
   
-  <br>
-  <a href="/challenges">Back to the challenge listing</a>
+  Back to the <a href="/challenges">scoreboard</a>.
 
 {% endblock %}

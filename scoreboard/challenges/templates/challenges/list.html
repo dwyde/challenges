@@ -1,35 +1,25 @@
 {% extends "challenges/base.html" %}
 
-{% block title %} Scoreboard {% endblock %}
+{% load scoreboard %}
 
 {% block content %}
-
-{% load scoreboard %}
-  <div>
-    C:\> dir c:\challenges\*.exe<br>
-
+    ] CATALOG<br>
     <br>
     &nbsp; Username: {{ user }}<br>
     &nbsp; Points : {{ points }}<br>
     <br>
-
-    &nbsp; Challenges:
-    <br><br>
+    &nbsp; Challenges:<br>
     <table>
     {% for challenge in challenges %}
-    <tr>
-      <td><a href="{{ challenge.pk }}">{{ challenge.display_name }}</a></td>
-      <td class="points">{{ challenge.points }} points</td>
-      {% if challenge.pk in solved %}
-        <td><span class="solved">(Solved)</span></td>
-      {% endif %}
-    </tr>
+      <tr>
+        <td><a href="{{ challenge.pk }}">{{ challenge.display_name }}</a></td>
+        <td class="points">{{ challenge.points }} points</td>
+        {% if challenge.pk in solved %}
+          <td><span class="solved">(Solved)</span></td>
+        {% endif %}
+      </tr>
     {% endfor %}
     </table>
     <br>
-    C:\>
-    <br>
-
-  </div>
-
+    ]
 {% endblock %}

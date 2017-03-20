@@ -3,10 +3,16 @@
     <style>
 
     body {
-      background: black;
+      background: black url("/static/iie.png") no-repeat;
       color: green;
       font-family: monospace;
-      font-size: 1.4em;
+      font-size: 1em;
+      //background: url("/static/iie.png");
+      //background-size: 1105px 772px;
+      //background-repeat: no-repeat;
+      margin: 150px 0px 600px 160px;
+      height: 1105px;
+      width: 690px;
     }
 
     a {
@@ -15,7 +21,7 @@
 
     table {
         margin-left: 3em;
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     td.points {
@@ -24,11 +30,15 @@
     }
 
     .command-text {
-      color: #bbbbbb;
-      background: #111111;
-      width: 80%;
+      color: #000000;
+      background: #ffffff;
       margin: 0px 0px 0px 20px;
       padding: 10px 10px 10px 10px;
+    }
+
+    .highlight-text {
+      color: #000000;
+      background: #00aa00;
     }
 
     .info-text {
@@ -38,7 +48,6 @@
 
     .description {
       color: #bbbbbb;
-      width: 80%;
       margin: 0px 0px 0px 14px;
       padding: 2px 0px 2px 0px;
     }
@@ -61,7 +70,7 @@
     </style>
   </head>
   <body>
-    <h2>{% block title %} {% endblock %}</h2>
+    <b>{% block title %} {% endblock %}</b><br><br>
     {% block content %} {% endblock %}
   </body>
 </html>
