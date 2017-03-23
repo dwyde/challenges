@@ -1,13 +1,12 @@
 {% extends "challenges/base.html" %}
 
-{% block title %} {{ challenge.display_name }} {% endblock %}
+{% load scoreboard %}
+
+{% block title %} <span class="highlight-text">{{ challenge.display_name }}</span> {% endblock %}
 
 {% block content %}
 
-{% load scoreboard %}
-
-  <div>
-    Status:
+  Status:
     {% if solved is True %}
       <span class="solved">Solved</span>
     {% else %}
@@ -35,8 +34,8 @@
       {% endif %}
       {% csrf_token %}
     </form>
-  </div>
 
   Back to the <a href="..">scoreboard</a>.
+  </pre>
 
 {% endblock %}

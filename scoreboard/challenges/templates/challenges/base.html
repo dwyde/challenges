@@ -3,10 +3,12 @@
     <style>
 
     body {
-      background: black;
+      background: black url("/static/iie.png") no-repeat;
       color: green;
       font-family: monospace;
-      font-size: 1.4em;
+      font-size: 1em;
+      margin: 150px 0px 0px 160px;
+      width: 700px;
     }
 
     a {
@@ -15,7 +17,7 @@
 
     table {
         margin-left: 3em;
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     td.points {
@@ -24,11 +26,15 @@
     }
 
     .command-text {
-      color: #bbbbbb;
-      background: #111111;
-      width: 80%;
+      color: #000000;
+      background: #ffffff;
       margin: 0px 0px 0px 20px;
       padding: 10px 10px 10px 10px;
+    }
+
+    .highlight-text {
+      color: #000000;
+      background: #00aa00;
     }
 
     .info-text {
@@ -38,7 +44,6 @@
 
     .description {
       color: #bbbbbb;
-      width: 80%;
       margin: 0px 0px 0px 14px;
       padding: 2px 0px 2px 0px;
     }
@@ -58,10 +63,23 @@
       color: #ff0000;
     }
 
+    .footer {
+      position: absolute;
+      top: 780px;
+      left: 0px;
+      color: #373530;
+      width: 1105px;
+      text-align: center;
+    }
     </style>
   </head>
   <body>
-    <h2>{% block title %} {% endblock %}</h2>
+    <b>{% block title %} {% endblock %}</b><br><br>
     {% block content %} {% endblock %}
+
+    <span class="footer">
+      Available through <a href="https://github.com/dwyde/challenges">github.com/dwyde/challenges</a>. Art based on <a href="https://en.wikipedia.org/wiki/Apple_IIe#/media/File:Iie-system.jpg">image</a> from <a href="https://commons.wikimedia.org/wiki/User:Pratyeka">Pratyeka</a>, under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.<br>
+      Apple IIe and the Apple logo are registered trademarks of Apple, Inc, and used under fair use.
+    </span>
   </body>
 </html>
