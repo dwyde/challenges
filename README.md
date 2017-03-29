@@ -38,7 +38,5 @@ This collects static files and database entries for the scoreboard.
 Then, you can do `./run.sh` as normal.
 
 ## To-do
-- Persistent storage: the challenge database gets wiped out on every rebuild
 - A real Django setup (nginx in front of gunicorn, etc.)
 - Add write-ups and tests?
-- Multi-user support in the scoreboard
