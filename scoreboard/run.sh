@@ -1,3 +1,4 @@
+python3 ./wait_for_database.py
 python3 ./manage.py makemigrations challenges
 python3 ./manage.py migrate
 python3 ./manage.py loaddata challenges
