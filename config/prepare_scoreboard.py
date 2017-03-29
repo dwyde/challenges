@@ -88,8 +88,19 @@ def main():
 
     fixtures = []
     compose = collections.OrderedDict()
-    for i, name in enumerate(services):
-        if name != 'scoreboard':
+    for i, name in enumerate(services, -1):
+        if name == 'scoreboard':
+            compose[name] = {
+                'build': name,
+                'ports': [str(BASE_PORT) + ':' + str(SCOREBOARD_PORT)],
+                'depends_on': ['database']
+            }
+        elif name == 'database':
+            compose[name] = {
+                'image': 'postgres',
+                'volumes': ['./db_data:/var/lib/postgresql/data']
+            }
+        else:
             entry, port = generate_fixture(name, i)
             fixtures.append(entry)
             collect_static(name)
@@ -98,11 +109,6 @@ def main():
                     'build': os.path.join('challenges', name),
                     'ports': [str(BASE_PORT + i) + ':' + str(port)]
                 }
-        else:
-            compose[name] = {
-                'build': name,
-                'ports': [str(BASE_PORT) + ':' + str(SCOREBOARD_PORT)]
-            }
 
     with open(FIXTURES_FILE, 'w') as outfile:
         yaml.dump(fixtures, outfile)

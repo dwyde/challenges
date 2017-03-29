@@ -2,7 +2,11 @@ version: "2.1"
 services:
   scoreboard:
     build: scoreboard
+    depends_on: [database]
     ports: ['9000:9000']
+  database:
+    image: postgres
+    volumes: ['./db_data:/var/lib/postgresql/data']
   web-clicks:
     build: challenges/web-clicks
     ports: ['9001:80']
