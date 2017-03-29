@@ -9,7 +9,7 @@ from django.db import models
 class Challenge(models.Model):
 
     class Meta:
-        ordering = ['points']
+        ordering = ['points', 'name']
 
     name = models.CharField(max_length=128)
     display_name = models.CharField(max_length=128)
