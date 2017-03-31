@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^gmqth%t$oddt(fli3v@!)!h6xc@98freea30g($0gk8b=9-+i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -133,3 +133,6 @@ AUTH_USER_MODEL = 'challenges.AutoUser'
 
 # Roughly 10 years
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 10
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
