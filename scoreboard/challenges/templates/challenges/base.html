@@ -1,78 +1,7 @@
 <html>
   <head>
     {% block head %} {% endblock %}
-    <style>
-
-    body {
-      background: black url("/static/iie.png") no-repeat;
-      color: green;
-      font-family: monospace;
-      font-size: 1em;
-      margin: 150px 0px 0px 160px;
-      width: 700px;
-    }
-
-    a {
-      color: #bbbbbb;
-    }
-
-    table {
-        margin-left: 3em;
-        font-size: 1em;
-    }
-
-    td.points {
-        padding-left: 1em;
-        text-align: right;
-    }
-
-    .command-text {
-      color: #000000;
-      background: #ffffff;
-      margin: 0px 0px 0px 20px;
-      padding: 10px 10px 10px 10px;
-    }
-
-    .highlight-text {
-      color: #000000;
-      background: #00aa00;
-    }
-
-    .info-text {
-      margin: 0px 0px 0px 14px;
-      padding: 10px 10px 10px 10px;
-    }
-
-    .description {
-      color: #bbbbbb;
-      margin: 0px 0px 0px 14px;
-      padding: 2px 0px 2px 0px;
-    }
-
-    input {
-      background: #00aa00;
-      font-family: monospace;
-      color: #000000;
-      border: none;
-    }
-
-    .solved {
-      color: #00ff00;
-    }
-
-    .unsolved {
-      color: #ff0000;
-    }
-
-    .footer {
-      position: absolute;
-      top: 780px;
-      left: 0px;
-      color: #373530;
-      width: 1105px;
-      text-align: center;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
   </head>
   <body>
     <b>{% block title %} {% endblock %}</b><br><br>

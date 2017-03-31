@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    #'django.contrib.messages',
     'django.contrib.staticfiles',
     'challenges',
 ]
@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'challenges.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    #'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
@@ -60,10 +60,8 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -82,6 +80,7 @@ DATABASES = {
          'USER': 'postgres',
          'HOST': 'database',
          'PORT': 5432,
+         'CONN_MAX_AGE': None,
     },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -123,9 +122,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # Scoreboard-specific settings
@@ -133,6 +129,7 @@ AUTH_USER_MODEL = 'challenges.AutoUser'
 
 # Roughly 10 years
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 10
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
