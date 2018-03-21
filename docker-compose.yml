@@ -24,7 +24,7 @@ services:
     ports: ['9005:7777']
   python-zero:
     build: challenges/python-zero
-    ports: ['9006:7777']
+    ports: ['9006:8888']
   python-alphabet:
     build: challenges/python-alphabet
     ports: ['9007:8888']

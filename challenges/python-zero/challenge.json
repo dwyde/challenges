@@ -3,5 +3,5 @@
     "desc" : "<p>Make a Python literal that does not evaluate to zero: <code>echo 'solution' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/python-zero/challenge.py\">source</a>.</p>",
     "displayname" : "Python - Zero Eval",
     "flag": "flag{congrats_you_literally_succeeded}",
-    "port": 7777
+    "port": 8888
 }
