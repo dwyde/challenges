@@ -5,7 +5,7 @@ MAINTAINER David Wyde (david.wyde@gmail.com)
 # Install extra software
 RUN apt-get update
 RUN apt-get install -y nginx net-tools
-RUN pip3 install django==1.10.6 pyyaml psycopg2
+RUN pip3 install django==1.11.15 pyyaml psycopg2-binary
 RUN pip3 install uwsgi
 
 # Add the user
