@@ -4,4 +4,4 @@ python3 ./manage.py migrate
 python3 ./manage.py loaddata challenges
 #python3 ./manage.py runserver 0.0.0.0:9000
 python3 ./manage.py collectstatic --no-input
-uwsgi -s :8001 --module scoreboard.wsgi -p 6
+uwsgi -s :8001 --module scoreboard.wsgi -p 4
