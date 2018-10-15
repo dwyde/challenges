@@ -1,10 +1,8 @@
 body {
-  background: black url("/static/iie.png") no-repeat;
+  background: black;
   color: green;
   font-family: monospace;
-  font-size: 1em;
-  margin: 150px 0px 0px 160px;
-  width: 700px;
+  font-size: 1.4em;
 }
 
 a {
@@ -14,6 +12,10 @@ a {
 table {
     margin-left: 3em;
     font-size: 1em;
+}
+
+th {
+    text-align: left;
 }
 
 td.points {
