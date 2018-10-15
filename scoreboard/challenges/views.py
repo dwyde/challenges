@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'challenges/index.html')
 
 def list_challenges(request):
-    challenges = Challenge.objects.all()
+    challenges = Challenge.all_by_category()
     solved, points = Challenge.solved_by_user(request.user)
     context = {'challenges': challenges, 'solved': solved, 'points': points}
 
@@ -30,13 +30,10 @@ def show_challenge(request, challenge_name):
 
     else:
         # User is requesting challenge details only.
-
         if challenge.solved.filter(pk=request.user.pk):
-            context = { 'challenge': challenge, 'solved': True }
+            context = {'challenge': challenge, 'solved': True}
         else:
-            context = { 'challenge': challenge, 'solved': False }
-
-        if challenge.instructions:
-            context['instructions'] = "instructions/" + challenge.instructions + ".html"
+            context = {'challenge': challenge, 'solved': False}
 
         return render(request, 'challenges/show.html', context)
+

@@ -1,14 +1,15 @@
 {% extends "challenges/base.html" %}
 
 {% block content %}
-    ] CATALOG<br>
+    Username: {{ user }}<br>
+    Points: {{ points }}<br>
     <br>
-    &nbsp; Username: {{ user }}<br>
-    &nbsp; Points : {{ points }}<br>
-    <br>
-    &nbsp; Challenges:<br>
     <table>
-    {% for challenge in challenges %}
+    {% for category, challenge_group in challenges.items %}
+      <tr>
+          <th>{{ category | title }}</th>
+      </tr>
+      {% for challenge in challenge_group %}
       <tr>
         <td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
         <td class="points">{{ challenge.points }} points</td>
@@ -16,8 +17,8 @@
           <td><span class="solved">(Solved)</span></td>
         {% endif %}
       </tr>
+      {% endfor %}
     {% endfor %}
     </table>
     <br>
-    ]
 {% endblock %}

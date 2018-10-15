@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+import collections
 import uuid
 
 from django.conf import settings
@@ -40,6 +41,18 @@ class Challenge(models.Model):
             return ids, total_points
         else:
             return set(), 0
+
+    @classmethod
+    def all_by_category(cls):
+        challenges = cls.objects.all()
+        output = collections.OrderedDict()
+        for challenge in challenges:
+            category = challenge.name.split('-', 1)[0]
+            try:
+                output[category].append(challenge)
+            except KeyError:
+                output[category] = [challenge]
+        return output
 
     def __str__(self):
         return 'Challenge: {}'.format(self.name)
