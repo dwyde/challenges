@@ -13,8 +13,8 @@ def list_challenges(request):
 
     return render(request, 'challenges/list.html', context)
 
-def show_challenge(request, challenge_id):
-    challenge = get_object_or_404(Challenge, pk=challenge_id)
+def show_challenge(request, challenge_name):
+    challenge = get_object_or_404(Challenge, name=challenge_name)
 
     if request.POST:
         # User is submitting a solution, let's check it.

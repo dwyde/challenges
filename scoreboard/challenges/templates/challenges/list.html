@@ -10,7 +10,7 @@
     <table>
     {% for challenge in challenges %}
       <tr>
-        <td><a href="{{ challenge.pk }}">{{ challenge.display_name }}</a></td>
+        <td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
         <td class="points">{{ challenge.points }} points</td>
         {% if challenge.pk in solved %}
           <td><span class="solved">(Solved)</span></td>
