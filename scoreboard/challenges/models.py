@@ -28,7 +28,7 @@ class Challenge(models.Model):
             return 'Please authenticate.'
 
         expected = self.flag.lower()
-        provided = flag.lower()
+        provided = flag.strip().lower()
         if constant_time_compare(expected, provided):
             self.solved.add(user)
             return 'Correct!'
