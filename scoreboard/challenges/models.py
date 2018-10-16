@@ -6,6 +6,8 @@ import uuid
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
+from django.utils.crypto import constant_time_compare
+
 
 class Challenge(models.Model):
 
@@ -24,9 +26,10 @@ class Challenge(models.Model):
     def check_flag(self, user, flag):
         if not user.is_authenticated():
             return 'Please authenticate.'
-        
-        # FIXME: constant-time compare?
-        if self.flag.lower() == flag.lower():
+
+        expected = self.flag.lower()
+        provided = flag.lower()
+        if constant_time_compare(expected, provided):
             self.solved.add(user)
             return 'Correct!'
         else:
@@ -47,6 +50,7 @@ class Challenge(models.Model):
         challenges = cls.objects.all()
         output = collections.OrderedDict()
         for challenge in challenges:
+            # FIXME: make this a field on the model
             category = challenge.name.split('-', 1)[0]
             try:
                 output[category].append(challenge)
