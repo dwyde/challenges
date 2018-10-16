@@ -29,7 +29,9 @@ class Challenge(models.Model):
 
         expected = self.flag.lower()
         provided = flag.strip().lower()
-        if constant_time_compare(expected, provided):
+        wrapped = 'flag{%s}' % (provided,)
+        if constant_time_compare(expected, provided) or \
+                constant_time_compare(expected, wrapped):
             self.solved.add(user)
             return 'Correct!'
         else:
