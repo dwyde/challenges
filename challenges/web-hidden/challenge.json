@@ -3,5 +3,6 @@
     "desc" : "<p>This challenge's flag is hidden somewhere in a <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">web page</a>. Unfortunately for you, the page source has been <a href=\"https://github.com/aemkei/jsfuck\">obfuscated</a>.</p><p>You might want to use your browser's Developer Tools feature.</p>",
     "displayname" : "Web - Hidden",
     "flag": "flag{not_a_good_hiding_place}",
-    "port": 80
+    "port": 80,
+    "category": "web"
 }

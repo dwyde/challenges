@@ -4,5 +4,5 @@
     "displayname" : "Web - Sandbox",
     "flag": "flag{who_do_you_call_sandbox_busters}",
     "port": 7777,
-    "instructions": "eol_script"
+    "category": "web"
 }

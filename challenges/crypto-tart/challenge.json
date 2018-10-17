@@ -1,7 +1,8 @@
 {
-    "basescore" : 200,
+    "basescore" : 300,
     "desc" : "<p>A flag is embedded in <a href=\"/static/crypto-tart/archive\">this archive</a>. Can you extract it?</p>",
     "displayname" : "Crypto - Tart",
     "flag": "flag{but_the_files_are_all_empty}",
-    "port": null
+    "port": null,
+    "category": "crypto"
 }

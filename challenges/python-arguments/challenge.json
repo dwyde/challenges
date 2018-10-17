@@ -4,5 +4,5 @@
     "displayname" : "Python - Arguments",
     "flag": "flag{hope_the_argument_was_not_too_loud}",
     "port": 7777,
-    "instructions": "eol_script"
+    "category": "python"
 }

@@ -3,5 +3,6 @@
     "desc" : "<p>Make yourself an administrator on this <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">simple page</a>. You might want to look at <a href=\"/static/web-admin/challenge.py\">the source</a>.</p>",
     "displayname" : "Web - Admin",
     "flag": "flag{you_are_now_an_administrator}",
-    "port": 8888
+    "port": 8888,
+    "category": "web"
 }

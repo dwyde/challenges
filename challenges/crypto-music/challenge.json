@@ -3,5 +3,6 @@
     "desc" : "<p><a href=\"/static/crypto-music/music.png\">Music notes</a> encode a 32-character flag. Your submission should look like <code>flag{...}</code>.</p>",
     "displayname" : "Crypto - Music",
     "flag": "flag{cafebabefeedfacedeadbeeffadefade}",
-    "port": null
+    "port": null,
+    "category": "crypto"
 }
