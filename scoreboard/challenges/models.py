@@ -21,7 +21,7 @@ class Challenge(models.Model):
     description = models.TextField()
     flag = models.CharField(max_length=128)
     solved = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
-    instructions = models.CharField(max_length=64, blank=True, null=True)
+    category = models.CharField(max_length=64, blank=True, null=True)
 
     def check_flag(self, user, flag):
         if not user.is_authenticated():
@@ -52,8 +52,7 @@ class Challenge(models.Model):
         challenges = cls.objects.all()
         output = collections.OrderedDict()
         for challenge in challenges:
-            # FIXME: make this a field on the model
-            category = challenge.name.split('-', 1)[0]
+            category = challenge.category
             try:
                 output[category].append(challenge)
             except KeyError:

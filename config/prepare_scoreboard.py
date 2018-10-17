@@ -54,7 +54,7 @@ def generate_fixture(name, index):
             'description': challenge_json['desc'],
             'points': challenge_json['basescore'],
             'flag': challenge_json['flag'],
-            'instructions': challenge_json.get('instructions'),
+            'category': challenge_json['category'],
         }
     }
     return fixture, challenge_json['port']
