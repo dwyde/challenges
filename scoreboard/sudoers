@@ -1,0 +1,2 @@
+scoreboard ALL=(root) NOPASSWD:/usr/sbin/service nginx start
+
