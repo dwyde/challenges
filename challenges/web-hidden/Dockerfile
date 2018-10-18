@@ -1,6 +1,3 @@
-#
-# Dockerfile for SecCon CTF challenges
-#
 FROM nginx:1
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
