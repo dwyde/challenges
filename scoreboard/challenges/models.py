@@ -12,7 +12,7 @@ from django.utils.crypto import constant_time_compare
 class Challenge(models.Model):
 
     class Meta:
-        ordering = ['points', 'display_name']
+        ordering = ['points', 'name']
 
     name = models.CharField(max_length=128)
     display_name = models.CharField(max_length=128)
