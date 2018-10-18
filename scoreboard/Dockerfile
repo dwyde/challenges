@@ -17,7 +17,7 @@ WORKDIR /home/scoreboard
 
 # Copy the app in
 COPY . /home/scoreboard/
-RUN chown -R scoreboard /home/scoreboard/challenges/migrations
+RUN chown -R scoreboard /home/scoreboard/
 
 # Deploy the nginx configuration
 RUN ln -s /home/scoreboard/challenges_nginx.conf /etc/nginx/sites-enabled
