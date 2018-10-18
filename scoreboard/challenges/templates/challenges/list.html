@@ -5,19 +5,25 @@
     Points: {{ points }}<br>
     <br>
     <table>
-    {% for category, challenge_group in challenges.items %}
-      <tr>
-          <th>{{ category | title }}</th>
-      </tr>
-      {% for challenge in challenge_group %}
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Points</th>
+            <th>Solved?</th>
+        </tr>
+    {% for challenge in challenges %}
       <tr>
         <td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
-        <td class="points">{{ challenge.points }} points</td>
+        <td>{{ challenge.category | title }}</td>
         {% if challenge.pk in solved %}
-          <td><span class="solved">(Solved)</span></td>
+        <td class="points"><span class="solved">{{ challenge.points }}</span></td>
+        <td><span class="solved">Yes!</span></td>
+        </span>
+        {% else %}
+        <td class="points">{{ challenge.points }}</td>
+        <td>No</td>
         {% endif %}
       </tr>
-      {% endfor %}
     {% endfor %}
     </table>
     <br>
