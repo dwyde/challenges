@@ -1,5 +1,5 @@
 {
-    "basescore" : 100,
+    "basescore" : 200,
     "desc" : "<p>Use a restricted character set to make a valid Python expression: <code>echo 'solution' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/python-alphabet/challenge.py\">source</a>.</p>",
     "displayname" : "Alphabet",
     "flag": "flag{short_circuiting_logic}",

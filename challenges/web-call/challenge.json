@@ -1,5 +1,5 @@
 {
-    "basescore" : 500,
+    "basescore" : 400,
     "desc" : "<p>Run code equivalent to <code>result = flag(null)</code> in a JavaScript sandbox.</p><p><code>echo 'solution' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/web-call/challenge.js\">source</a>.</p>",
     "displayname" : "Call",
     "flag": "flag{who_do_you_call_sandbox_busters}",
