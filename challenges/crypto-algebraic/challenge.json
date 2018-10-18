@@ -1,7 +1,7 @@
 {
     "basescore" : 100,
     "desc" : "<p>Decode a string to play through the moves of a <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">chess game</a>.</p>",
-    "displayname" : "Crypto - Algebraic",
+    "displayname" : "Algebraic",
     "flag": "flag{you_figured_out_the_coordinate_system}",
     "port": 8888,
     "category": "crypto"

@@ -19,8 +19,8 @@ services:
   crypto-algebraic:
     build: challenges/crypto-algebraic
     ports: ['9004:8888']
-  web-sandbox:
-    build: challenges/web-sandbox
+  web-call:
+    build: challenges/web-call
     ports: ['9005:7777']
   python-zero:
     build: challenges/python-zero
@@ -28,8 +28,8 @@ services:
   python-alphabet:
     build: challenges/python-alphabet
     ports: ['9007:8888']
-  python-set-up:
-    build: challenges/python-set-up
+  python-setup:
+    build: challenges/python-setup
     ports: ['9008:8888']
   python-arguments:
     build: challenges/python-arguments

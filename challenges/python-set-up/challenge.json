@@ -1,8 +1,0 @@
-{
-    "basescore" : 300,
-    "desc" : "<p>Create an empty set() in Python, with strict constraints: <code>echo 'solution' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>Use the <a href=\"/static/python-set-up/challenge.py\">source</a>.</p>",
-    "displayname": "Python - Set Up",
-    "flag": "flag{on_your_mark_get_set_go}",
-    "port": 8888,
-    "category": "python"
-}
