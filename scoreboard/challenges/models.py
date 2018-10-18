@@ -12,7 +12,7 @@ from django.utils.crypto import constant_time_compare
 class Challenge(models.Model):
 
     class Meta:
-        ordering = ['points', 'name']
+        ordering = ['points', 'display_name']
 
     name = models.CharField(max_length=128)
     display_name = models.CharField(max_length=128)
@@ -46,18 +46,6 @@ class Challenge(models.Model):
             return ids, total_points
         else:
             return set(), 0
-
-    @classmethod
-    def all_by_category(cls):
-        challenges = cls.objects.all()
-        output = collections.OrderedDict()
-        for challenge in challenges:
-            category = challenge.category
-            try:
-                output[category].append(challenge)
-            except KeyError:
-                output[category] = [challenge]
-        return output
 
     def __str__(self):
         return 'Challenge: {}'.format(self.name)
