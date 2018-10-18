@@ -10,8 +10,8 @@ services:
   web-clicks:
     build: challenges/web-clicks
     ports: ['9001:80']
-  web-tags:
-    build: challenges/web-tags
+  crypto-tags:
+    build: challenges/crypto-tags
     ports: ['9002:80']
   web-admin:
     build: challenges/web-admin

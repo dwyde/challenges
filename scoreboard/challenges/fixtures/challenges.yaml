@@ -3,9 +3,9 @@
     name: web-clicks, points: 100, port: '9001'}
   model: challenges.challenge
   pk: 1
-- fields: {category: web, description: '<p>There is a flag encoded in this <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">HTML
+- fields: {category: crypto, description: '<p>There is a flag encoded in this <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">HTML
       page</a>.</p><p>One element doesn''t fit the pattern, but it''s still important!</p>',
-    display_name: Tags, flag: 'flag{nonsense_next_zeiodvpsymwrkc}', name: web-tags,
+    display_name: Tags, flag: 'flag{nonsense_next_zeiodvpsymwrkc}', name: crypto-tags,
     points: 200, port: '9002'}
   model: challenges.challenge
   pk: 2
@@ -38,7 +38,7 @@
 - fields: {category: python, description: '<p>Use a restricted character set to make
       a valid Python expression: <code>echo ''solution'' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See
       the <a href="/static/python-alphabet/challenge.py">source</a>.</p>', display_name: Alphabet,
-    flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 200, port: '9007'}
+    flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 100, port: '9007'}
   model: challenges.challenge
   pk: 7
 - fields: {category: python, description: '<p>Create an empty set() in Python, with
