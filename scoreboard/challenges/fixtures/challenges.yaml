@@ -103,10 +103,11 @@
     name: web-guestbook, points: 400, port: '9016'}
   model: challenges.challenge
   pk: 16
-- fields: {category: python, description: '<p>Enter a Python expression that evaluates
-      to the <code>type</code> object.</p><p><code>echo ''solution'' | nc ${PUBLIC_HOST}
-      ${PUBLIC_PORT}</code></p><p>Use the <a href="${STATIC_PATH}challenge.py">source</a>.</p>',
-    display_name: Type, flag: 'flag{hope_this_was_your_type_of_challenge}', name: python-type,
+- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Provide</a>
+      a Python expression that evaluates to the <code>code</code> type.</p><p>Your
+      input can be up to 32 characters long, and may only include the following characters:</p><p><code>a-z
+      0-9 _ . : []</code></p><p>Use the <a href="${STATIC_PATH}challenge.py">source</a>.</p>',
+    display_name: Code, flag: 'flag{hope_this_was_your_type_of_challenge}', name: python-code,
     points: 200, port: '9017'}
   model: challenges.challenge
   pk: 17
