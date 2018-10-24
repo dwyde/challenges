@@ -58,3 +58,6 @@ services:
   python-code:
     build: challenges/python-code
     ports: ['9017:8888']
+  python-underscore:
+    build: challenges/python-underscore
+    ports: ['9020:8888']

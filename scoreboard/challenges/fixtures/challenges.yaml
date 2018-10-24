@@ -122,3 +122,9 @@
     name: crypto-tart, points: 300, port: '9019'}
   model: challenges.challenge
   pk: 19
+- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Send</a>
+      the desired input to an <a href="${STATIC_PATH}challenge.py">obfuscated</a>
+      Python program.</p>', display_name: Underscore, flag: 'flag{this_underscores_the_importance_of_readability}',
+    name: python-underscore, points: 350, port: '9020'}
+  model: challenges.challenge
+  pk: 20
