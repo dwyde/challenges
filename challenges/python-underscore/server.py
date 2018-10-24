@@ -60,6 +60,11 @@ class MainHandler(tornado.web.RequestHandler):
         user_input = query.get('input', [''])
         return user_input[0]
 
+    def set_default_headers(self):
+        """ Do not send an informative Server header.
+        """
+        self.set_header('Server', 'CTF')
+
     def initialize(self, flag):
         """ Set up the handler object.
         """
