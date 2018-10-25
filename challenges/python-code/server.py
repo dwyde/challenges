@@ -11,6 +11,9 @@ import challenge
 # The port on which this application will listen
 PORT = 8888
 
+# An object that indicates an empty value.
+NO_FLAG = object()
+
 
 class MainHandler(tornado.web.RequestHandler):
 
@@ -44,7 +47,7 @@ class MainHandler(tornado.web.RequestHandler):
         except Exception as ex:
             result = 'Error: {}'.format(ex)
         else:
-            placeholder_flag = getattr(challenge, 'FLAG', object())
+            placeholder_flag = getattr(challenge, 'FLAG', NO_FLAG)
             if result is placeholder_flag:
                 result = self.flag
         text_out = str(result)
