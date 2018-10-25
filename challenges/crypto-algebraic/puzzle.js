@@ -7,6 +7,7 @@ var onChange = function(oldPos, newPos) {
         success: function (data) {
             if (data !== '') {
                 $('#output').text(data);
+                $('#output').css('font-weight', 'bold');
             }
         },
     });
