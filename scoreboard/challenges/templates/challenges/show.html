@@ -23,7 +23,7 @@
     <form method="POST">
       Submit flag:
       {% if solved is True %}
-        <input type="text" name="flag" value="ALREADY SOLVED" disabled=True>
+        <input type="text" name="flag" value="Already solved" disabled=disabled>
       {% else %}
         <input type="text" name="flag" value="flag{}" onclick="this.value=''">
       {% endif %}
