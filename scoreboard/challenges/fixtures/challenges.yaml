@@ -111,10 +111,9 @@
     points: 200, port: '9017'}
   model: challenges.challenge
   pk: 17
-- fields: {category: crypto, description: '<p><a href="/static/crypto-music/music.png">Music
-      notes</a> encode a 32-character flag. Your submission should look like <code>flag{...}</code>.</p>',
-    display_name: Music, flag: 'flag{cafebabefeedfacedeadbeeffadefade}', name: crypto-music,
-    points: 50, port: '9018'}
+- fields: {category: crypto, description: '<p><a href="${STATIC_PATH}music.png">Music
+      notes</a> encode a 32-character flag.</p>', display_name: Music, flag: 'flag{cafebabefeedfacedeadbeeffadefade}',
+    name: crypto-music, points: 50, port: '9018'}
   model: challenges.challenge
   pk: 18
 - fields: {category: crypto, description: '<p>A flag is embedded in <a href="/static/crypto-tart/archive">this
