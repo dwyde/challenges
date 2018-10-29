@@ -35,9 +35,10 @@
     port: '9006'}
   model: challenges.challenge
   pk: 6
-- fields: {category: python, description: '<p>Use a restricted character set to make
-      a valid Python expression: <code>echo ''solution'' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See
-      the <a href="/static/python-alphabet/challenge.py">source</a>.</p>', display_name: Alphabet,
+- fields: {category: python, description: '<p>Use a restricted character set to <a
+      href="//${PUBLIC_HOST}:${PUBLIC_PORT}">make</a> a valid Python expression.</p><p>Use
+      these characters: <code>[[abcdefghijklmnopqrstuvwxyz]]</code></p><p>See the
+      <a href="${STATIC_PATH}challenge.py">source</a>.</p>', display_name: Alphabet,
     flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 200, port: '9007'}
   model: challenges.challenge
   pk: 7
