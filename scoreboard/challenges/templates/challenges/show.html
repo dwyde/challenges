@@ -2,7 +2,7 @@
 
 {% load scoreboard %}
 
-{% block title %} <span class="highlight-text">{{ challenge.display_name }}</span> {% endblock %}
+{% block title %}<p><span class="highlight-text">{{ challenge.display_name }}</span></p>{% endblock %}
 
 {% block content %}
 
@@ -30,7 +30,6 @@
       {% csrf_token %}
     </form>
 
-  Back to the <a href="..">scoreboard</a>.
-  </pre>
+    <p>Back to the <a href="..">scoreboard</a>.</p>
 
 {% endblock %}
