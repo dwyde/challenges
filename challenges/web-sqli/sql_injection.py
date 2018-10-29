@@ -10,7 +10,7 @@ import urllib.parse
 
 
 # The flag.
-FLAG_STRING = 'flag{pr3p4r3d_stmts_r_th3_b3st}'
+FLAG_STRING = 'flag{prepared_statements_make_the_web_go_round}'
 
 # Template of HTML to display
 BASE_HTML = '''

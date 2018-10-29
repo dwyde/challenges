@@ -75,12 +75,13 @@
     name: python-format, points: 300, port: '9012'}
   model: challenges.challenge
   pk: 12
-- fields: {category: web, description: '<p>You''ve come across a ninja belt <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">inventory
-      system</a>. Can you find any way to dump its database?</p>', display_name: SQLi,
-    flag: 'flag{pr3p4r3d_stmts_r_th3_b3st}', name: web-sqli, points: 100, port: '9013'}
+- fields: {category: web, description: '<p>You''ve come across a martial arts belt
+      <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">inventory system</a>. Can you find
+      any way to dump its database?</p>', display_name: SQLi, flag: 'flag{prepared_statements_make_the_web_go_round}',
+    name: web-sqli, points: 100, port: '9013'}
   model: challenges.challenge
   pk: 13
-- fields: {category: web, description: '<p>The ninja belt server has been updated
+- fields: {category: web, description: '<p>The belt inventory server has been updated
       to fix its previous bug. You would still LIKE to find a flaw in the <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">new
       version</a>...</p>', display_name: Sequel, flag: 'flag{hope_you_like_wildcards}',
     name: web-sequel, points: 150, port: '9014'}

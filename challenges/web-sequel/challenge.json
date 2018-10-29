@@ -1,6 +1,6 @@
 {
     "basescore" : 150,
-    "desc" : "<p>The ninja belt server has been updated to fix its previous bug. You would still LIKE to find a flaw in the <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">new version</a>...</p>",
+    "desc" : "<p>The belt inventory server has been updated to fix its previous bug. You would still LIKE to find a flaw in the <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">new version</a>...</p>",
     "displayname" : "Sequel",
     "flag": "flag{hope_you_like_wildcards}",
     "port": 8888,
