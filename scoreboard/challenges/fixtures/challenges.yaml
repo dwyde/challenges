@@ -116,7 +116,7 @@
     name: crypto-music, points: 50, port: '9018'}
   model: challenges.challenge
   pk: 18
-- fields: {category: crypto, description: '<p>A flag is embedded in <a href="/static/crypto-tart/archive">this
+- fields: {category: crypto, description: '<p>A flag is embedded in <a href="${STATIC_PATH}archive">this
       archive</a>. Can you extract it?</p>', display_name: Tart, flag: 'flag{but_the_files_are_all_empty}',
     name: crypto-tart, points: 300, port: '9019'}
   model: challenges.challenge
