@@ -1,12 +1,11 @@
-FROM python:3.5
+FROM ubuntu
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
 # Install extra software
-RUN apt-get update
-RUN apt-get install -y nginx net-tools sudo
-RUN pip3 install django==1.11.15 pyyaml psycopg2-binary
-RUN pip3 install uwsgi
+RUN apt update
+RUN apt install -y python3-pip nginx nginx-extras sudo
+RUN pip3 install django==1.11.15 pyyaml psycopg2-binary uwsgi
 
 # Add the user
 RUN useradd --create-home scoreboard
