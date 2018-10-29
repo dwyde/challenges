@@ -2,6 +2,9 @@ FROM python:3.5
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
+# Install dependencies
+RUN pip3 install tornado
+
 # Add the user
 RUN useradd -m challenge
 

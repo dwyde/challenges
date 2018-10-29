@@ -1,6 +1,6 @@
 {
     "basescore" : 200,
-    "desc" : "<p>Make a Python literal that does not evaluate to zero: <code>echo 'solution' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/python-zero/challenge.py\">source</a>.</p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Create</a> a Python literal that does not evaluate to zero.</p><p>View the <a href=\"${STATIC_PATH}challenge.py\">source</a>.</p>",
     "displayname" : "Zero",
     "flag": "flag{congrats_you_literally_succeeded}",
     "port": 8888,
