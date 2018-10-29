@@ -1,42 +1,21 @@
 #!/usr/bin/env python
 """
-A Python puzzle: SQL injection (on an HTTP server).
+SQL LIKE injection (on an HTTP server).
 """
-import http.server
-import socketserver
-import os
 import sqlite3
 import urllib.parse
+import xml.sax.saxutils
 
+import tornado.ioloop
+import tornado.web
 
-# The host on which to listen
-DEFAULT_HOST = '0.0.0.0'
 
 # The port on which to listen
-DEFAULT_PORT = 8888
+PORT = 8888
 
 # The flag.
 FLAG_STRING = 'flag{hope_you_like_wildcards}'
 
-# Template of HTML to display
-BASE_HTML = '''
-<!DOCTYPE html>
-<html>
-<head>
-<title>SQL Injection Dojo</title>
-</head>
-<body>
-<p>
-What color belt would you like?
-</p>
-<form>
-    <input name="belt_color">
-    <input type="submit" value="Choose!">
-</form>
-<p>{message}</p>
-</body>
-</html>
-'''
 
 class SqlInjection(object):
     """ The main class for this module: allow SQL injection.
@@ -74,83 +53,84 @@ class SqlInjection(object):
         return results
 
 
-class MyHttpServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
-    """ Use a very simple threaded HTTP server, with no thread pooling :-(
-    """
-    allow_reuse_address = True
-
-
-class MyHttpRequestHandler(http.server.BaseHTTPRequestHandler):
+class MainHandler(tornado.web.RequestHandler):
     """ Handle HTTP requests to allow SQL injection.
     """
 
-    def do_HEAD(self):
-        """ Send an HTTP HEAD response.
-        """
-        self._start_response()
+    # Template of HTML to display
+    BASE_HTML = '''
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>SQL Injection Dojo</title>
+    </head>
+    <body>
+    <p>
+    What color belt would you like?
+    </p>
+    <form>
+        <input name="belt_color">
+        <input type="submit" value="Choose!">
+    </form>
+    <p>{message}</p>
+    </body>
+    </html>
+    '''
 
-    def do_GET(self):
+    def get(self):
         """ Take input from a GET parameter, and respond to the user.
         """
-        self._start_response()
-        query = urllib.parse.urlparse(self.path).query
-        pairs = urllib.parse.parse_qs(query)
-        try:
-            value = pairs['belt_color'][-1]
-        except (KeyError, IndexError):
+        value = self.get_argument('belt_color', '')
+        if not value:
             text = 'Please choose a belt color!'
-            self.send(text)
+            self._send_message(text)
         else:
             sql_injection = SqlInjection()
             result = sql_injection.query(value)
-            html_safe_value = _html_escape(value)
+            html_safe_value = xml.sax.saxutils.escape(value)
 
             if not result:
                 message_template = ("You want the '{color}' belt?"
                                    " There's no such thing!")
                 text = message_template.format(color=html_safe_value)
-                self.send(text)
+                self._send_message(text)
             elif len(result) == 1:
                 message_template = 'Yes, you can earn a {color} belt!'
                 text = message_template.format(color=html_safe_value)
-                self.send(text)
+                self._send_message(text)
             else:
                 text = 'Multiple results? Impossible!<br>' + '<br>'.join(result)
-                self.send(text)
+                self._send_message(text)
 
-    def send(self, text):
-        message = BASE_HTML.format(message=text)
-        self.wfile.write(message.encode())
-
-    def _start_response(self):
-        """ Send a response code and headers.
+    def set_default_headers(self):
+        """ Do not send an informative Server header.
         """
-        self.send_response(200)
-        self.send_header('Content-Type', 'text/html')
-        self.end_headers()
+        self.set_header('Server', 'CTF')
 
-def _html_escape(value):
-    return value.replace('&', '&amp;').replace(
-                         '>', '&gt;').replace(
-                         '<', '&lt;').replace(
-                         '"', '&quot;').replace(
-                         "'", '&#x27;').replace(
-                         '/', '&#x2F;')
+    def _send_message(self, message):
+        """ Write a response to the client.
+        """
+        text = self.BASE_HTML.format(message=message)
+        self.write(text)
 
-def run(server_address,
-        server_port,
-        server_class=MyHttpServer,
-        handler_class=MyHttpRequestHandler):
-    """ Run an HTTP server that's vulnerable to SQL injection.
+
+def make_app():
+    """ Create the Tornado app.
     """
-    server_address = (server_address, server_port)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
+    return tornado.web.Application([
+        (r'/', MainHandler)
+    ])
+
 
 def main():
-    """ Run the server.
+    """ Run the application.
     """
-    run(DEFAULT_HOST, DEFAULT_PORT)
+    app = make_app()
+    app.listen(PORT)
+    tornado.ioloop.IOLoop.current().start()
+
 
 if __name__ == '__main__':
     main()
+
