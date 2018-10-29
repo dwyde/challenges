@@ -4,17 +4,10 @@
 
 {% block content %}
 
-  <pre>
-    ] SOLVE
+    <p>Submitted flag: {{ flag }}</p>
   
-      Enter challenge ID: {{ challenge.pk }}
-      Enter challenge flag: {{ flag }}
-  
-      >> <font color="#00ff00">{{ message }}</font>
+    <p><strong>{{ message }}</strong></p>
 
-    ]
-  </pre>
-  
-  Back to the <a href="/challenges">scoreboard</a>.
+    <p>Back to the <a href="..">scoreboard</a>.</p>
 
 {% endblock %}
