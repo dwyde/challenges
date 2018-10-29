@@ -1,4 +1,4 @@
-FROM nginx:1
+FROM nginx
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
