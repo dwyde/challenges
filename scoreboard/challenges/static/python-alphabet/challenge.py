@@ -24,7 +24,7 @@ def check_eval(value):
 
 
 def read_flag():
-    """ Read in this challenge's flag.
+    """ Read this challenge's flag.
     """
     path = os.path.join(os.path.dirname(__file__), 'flag')
     with open(path) as fp:
