@@ -37,7 +37,7 @@
   pk: 6
 - fields: {category: python, description: '<p>Use a restricted character set to <a
       href="//${PUBLIC_HOST}:${PUBLIC_PORT}">make</a> a valid Python expression.</p><p>Use
-      these characters: <code>[[abcdefghijklmnopqrstuvwxyz]]</code></p><p>See the
+      these characters: <code>[[]]abcdefghijklmnopqrstuvwxyz</code></p><p>See the
       <a href="${STATIC_PATH}challenge.py">source</a>.</p>', display_name: Alphabet,
     flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 200, port: '9007'}
   model: challenges.challenge
