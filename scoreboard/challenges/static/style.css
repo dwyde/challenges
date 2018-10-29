@@ -1,11 +1,27 @@
 body {
-  background: black;
-  color: green;
+  background: #A3C3E0;
   font-size: 1.4em;
+  margin:0;
 }
 
-a {
-  color: #bbbbbb;
+header {
+  background: #2D369C;
+  color:  #A3C3E0;
+  font-size: 1.8em;
+  font-family: monospace;
+}
+
+header h1 {
+  margin: 0.2em 0;
+  padding:0;
+}
+
+header p {
+  margin: 0
+}
+
+header, #main {
+  padding: 0.5em;
 }
 
 table {
@@ -22,16 +38,9 @@ td.points {
     text-align: right;
 }
 
-.command-text {
-  color: #000000;
-  background: #ffffff;
-  margin: 0px 0px 0px 20px;
-  padding: 10px 10px 10px 10px;
-}
-
 .highlight-text {
-  color: #000000;
-  background: #00aa00;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .info-text {
@@ -60,11 +69,3 @@ input {
   color: #ff0000;
 }
 
-.footer {
-  position: absolute;
-  top: 780px;
-  left: 0px;
-  color: #373530;
-  width: 1105px;
-  text-align: center;
-}
