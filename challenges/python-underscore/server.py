@@ -11,9 +11,6 @@ import challenge
 # The port on which this application will listen
 PORT = 8888
 
-# An object that indicates an empty value.
-NO_FLAG = object()
-
 
 class MainHandler(tornado.web.RequestHandler):
 
@@ -46,13 +43,7 @@ class MainHandler(tornado.web.RequestHandler):
             result = challenge.main(user_input)
         except Exception as ex:
             result = 'Error: {}'.format(ex)
-        else:
-            placeholder_flag = getattr(challenge, 'FLAG', NO_FLAG)
-            if result is placeholder_flag:
-                result = self.flag
-        text_out = str(result)
-        output = xml.sax.saxutils.escape(text_out)
-        self.write(output)
+        self._write_result(result)
 
     def _read_user_input(self):
         """ Parse a value from user-supplied data.
@@ -62,6 +53,13 @@ class MainHandler(tornado.web.RequestHandler):
         query = urllib.parse.parse_qs(cleaned)
         user_input = query.get('input', [''])
         return user_input[0]
+
+    def _write_result(self, result):
+        """ Write a result to the client.
+        """
+        text_out = str(result)
+        output = xml.sax.saxutils.escape(text_out)
+        self.write(output)
 
     def set_default_headers(self):
         """ Do not send an informative Server header.
