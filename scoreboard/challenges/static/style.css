@@ -4,26 +4,20 @@ body {
   margin: 0;
 }
 
-#banner {
-  background: #2D369C;
-}
-
 header {
   color:  #A3C3E0;
   font-size: 1.8em;
   font-family: monospace;
-  padding: 0.5em;
-  text-align:center;
-  display: inline-block;
+  background-color: #2D369C;
+  background-image: url("/static/creatures.png"), url("/static/creatures.png");
+  background-position: top, bottom;
+  background-repeat: repeat-x;
+  background-origin: content-box;
+  padding: 0.8em 0.5em;
 }
 
 header h1 {
-  margin: 0.2em 0;
-  padding:0;
-}
-
-header p {
-  margin: 0
+  padding: 0.1em;
 }
 
 #main {
