@@ -1,14 +1,20 @@
 body {
   background: #A3C3E0;
   font-size: 1.4em;
-  margin:0;
+  margin: 0;
+}
+
+#banner {
+  background: #2D369C;
 }
 
 header {
-  background: #2D369C;
   color:  #A3C3E0;
   font-size: 1.8em;
   font-family: monospace;
+  padding: 0.5em;
+  text-align:center;
+  display: inline-block;
 }
 
 header h1 {
@@ -20,52 +26,67 @@ header p {
   margin: 0
 }
 
-header, #main {
-  padding: 0.5em;
+#main {
+  padding: 1em;
+}
+
+#info p {
+  margin: 0;
 }
 
 table {
-    margin-left: 3em;
-    font-size: 1em;
+  border-collapse: collapse;
+  margin-top: 1em;
 }
 
-th {
-    text-align: left;
+table, th, td {
+  border: 1px solid black;
+  padding: 0.5em 1.5em;
+  text-align:center;
 }
 
-td.points {
-    padding-left: 1em;
-    text-align: right;
+td {
+  width: 25%;
+}
+
+tr:nth-child(even) {
+  background-color: #E9ECBC;
+}
+
+tr:nth-child(odd) {
+  background-color: #D7DB82;
 }
 
 .highlight-text {
   font-weight: bold;
   font-size: 1.2em;
-}
-
-.info-text {
-  margin: 0px 0px 0px 14px;
-  padding: 10px 10px 10px 10px;
+  padding-top: 1em;
 }
 
 .description {
-  color: #bbbbbb;
-  margin: 0px 0px 0px 14px;
-  padding: 2px 0px 2px 0px;
+  font-family: monospace;
+  margin: 2em 0;
+}
+
+.description code {
+  background: #ddd;
+  padding: 0.2em;
 }
 
 input {
-  background: #00aa00;
   font-family: monospace;
-  color: #000000;
-  border: none;
+  border: 1px solid black;
+  padding: .4em;
 }
 
 .solved {
-  color: #00ff00;
+  font-weight: bold;
+}
+
+span.solved {
+  color: navy;
 }
 
 .unsolved {
-  color: #ff0000;
 }
 
