@@ -33,7 +33,7 @@ services:
     ports: ['9008:8888']
   python-arguments:
     build: challenges/python-arguments
-    ports: ['9009:7777']
+    ports: ['9009:8888']
   python-sandbox:
     build: challenges/python-sandbox
     ports: ['9010:7777']
@@ -42,7 +42,7 @@ services:
     ports: ['9011:7777']
   python-format:
     build: challenges/python-format
-    ports: ['9012:7777']
+    ports: ['9012:8888']
   web-sqli:
     build: challenges/web-sqli
     ports: ['9013:8888']
