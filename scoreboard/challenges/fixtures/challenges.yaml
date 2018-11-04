@@ -41,10 +41,10 @@
     flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 200, port: '9007'}
   model: challenges.challenge
   pk: 7
-- fields: {category: python, description: '<p>Create an empty set() in Python, with
-      strict constraints: <code>echo ''solution'' | nc ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>Use
-      the <a href="/static/python-setup/challenge.py">source</a>.</p>', display_name: Setup,
-    flag: 'flag{on_your_mark_get_set_go}', name: python-setup, points: 300, port: '9008'}
+- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Create</a>
+      an empty <code>set</code> in Python, with <a href="${STATIC_PATH}challenge.py">strict
+      constraints</a>.</p>', display_name: Setup, flag: 'flag{on_your_mark_get_set_go}',
+    name: python-setup, points: 300, port: '9008'}
   model: challenges.challenge
   pk: 8
 - fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Inject</a>

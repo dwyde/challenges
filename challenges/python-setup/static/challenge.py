@@ -48,6 +48,7 @@ def main(user_input):
 
 if __name__ == '__main__':
     import sys 
-    user_input = sys.stdin.read().strip()
+    user_input = sys.stdin.readline().strip()
     result = main(user_input)
     print(result)
+
