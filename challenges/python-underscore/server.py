@@ -1,4 +1,3 @@
-import os.path
 import urllib.parse
 import xml.sax.saxutils
 
@@ -66,25 +65,12 @@ class MainHandler(tornado.web.RequestHandler):
         """
         self.set_header('Server', 'CTF')
 
-    def initialize(self, flag):
-        """ Set up the handler object.
-        """
-        self.flag = flag
-
-
-def read_flag():
-    """ Read in this challenge's flag.
-    """
-    path = os.path.join(os.path.dirname(__file__), 'flag')
-    with open(path) as fp:
-        return fp.read().strip()
-
 
 def make_app():
     """ Create the Tornado app.
     """
     return tornado.web.Application([
-        (r'/', MainHandler, {'flag': read_flag()}),
+        (r'/', MainHandler),
     ])
 
 
