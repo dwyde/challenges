@@ -2,26 +2,17 @@ FROM python:3.5
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
-# Install extra software
-RUN apt-get update
-RUN apt-get install -y socat
+RUN pip3 install tornado
 
-# Add the user
-RUN useradd --create-home challenge
+RUN useradd -m challenge
 
-# Copy the app in
-COPY arguments.py flag wrapper.sh /home/challenge/
-RUN chown root:root /home/challenge/arguments.py /home/challenge/flag /home/challenge/wrapper.sh
-RUN chmod 644 /home/challenge/arguments.py /home/challenge/flag
-RUN chmod 755 /home/challenge/wrapper.sh
+COPY challenge.py server.py flag /home/challenge/
 
-# Switch users
+EXPOSE 8888
+
 USER challenge
 
-# Set our working directory
 WORKDIR /home/challenge
 
-# Run the app
-EXPOSE 7777
-CMD ["socat", "tcp-l:7777,reuseaddr,fork", "system:'./wrapper.sh',stderr,nofork"]
+CMD ["python3", "server.py"]
 

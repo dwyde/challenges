@@ -47,11 +47,10 @@
     flag: 'flag{on_your_mark_get_set_go}', name: python-setup, points: 300, port: '9008'}
   model: challenges.challenge
   pk: 8
-- fields: {category: python, description: '<p>Inject arguments into a system command:
-      <code>echo ''solution'' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See
-      the <a href="/static/python-arguments/arguments.py">source</a></p>', display_name: Arguments,
-    flag: 'flag{hope_the_argument_was_not_too_loud}', name: python-arguments, points: 300,
-    port: '9009'}
+- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Inject</a>
+      arguments into a system command.</p><p>See the <a href="${STATIC_PATH}challenge.py">source</a>.</p>',
+    display_name: Arguments, flag: 'flag{hope_the_argument_was_not_too_loud}', name: python-arguments,
+    points: 300, port: '9009'}
   model: challenges.challenge
   pk: 9
 - fields: {category: python, description: '<p>Read a flag from a partially-implemented

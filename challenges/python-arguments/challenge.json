@@ -1,8 +1,8 @@
 {
     "basescore" : 300,
-    "desc" : "<p>Inject arguments into a system command: <code>echo 'solution' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p><p>See the <a href=\"/static/python-arguments/arguments.py\">source</a></p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Inject</a> arguments into a system command.</p><p>See the <a href=\"${STATIC_PATH}challenge.py\">source</a>.</p>",
     "displayname" : "Arguments",
     "flag": "flag{hope_the_argument_was_not_too_loud}",
-    "port": 7777,
+    "port": 8888,
     "category": "python"
 }

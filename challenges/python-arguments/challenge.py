@@ -4,7 +4,6 @@ A Unix and Python 3 challenge: exploit a command argument injection.
 import re
 import os.path
 import subprocess
-import sys
 
 
 def echo(message):
@@ -33,13 +32,16 @@ def read_flag():
         return fp.read().strip()
 
 
-def main():
+def main(user_input):
     """ Run the echo command.
     """
-    user_input = sys.stdin.read()
     result = echo(user_input)
-    print(result)
+    return result
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    user_input = sys.stdin.read().strip()
+    result = main(user_input)
+    print(result)
+
