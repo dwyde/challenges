@@ -3,6 +3,7 @@ A web challenge: get admin status, to read a flag.
 """
 import json
 import os.path
+import xml.sax.saxutils
 
 import tornado.ioloop
 import tornado.web
@@ -16,29 +17,31 @@ class MainHandler(tornado.web.RequestHandler):
     """ Handle web requests: check a user's status.
     """
 
+    FORM_HTML = '\n'.join([
+        '<html>',
+        '<body>',
+        '<form method="POST">',
+        '   <label for="name">Who are you?</label>',
+        '   <br>',
+        '   <input id="name" name="name">',
+        '   <br>',
+        '   <input type="submit">',
+        '</form>',
+        '</body>',
+        '</html>',
+    ])
+
     def get(self):
         """ Handle HTTP GET: return a simple HTML form.
         """
-        self.write('\n'.join([
-            '<html>',
-            '<body>',
-            '<form method="POST">',
-            '   <label for="name">Who are you?</label>',
-            '   <br>',
-            '   <input id="name" name="name">',
-            '   <br>',
-            '   <input type="submit">',
-            '</form>',
-            '</body>',
-            '</html>',
-        ]))
+        self.write(self.FORM_HTML)
 
     def post(self):
         """ Handle HTTP POST: check the provided name.
         """
         name = self.get_argument('name', '')
         result = self.check(name)
-        output = self.sanitize(result)
+        output = xml.sax.saxutils.escape(result)
         self.write(output)
 
     def check(self, user_input):
@@ -56,18 +59,15 @@ class MainHandler(tornado.web.RequestHandler):
         else:
             return 'Hi, %s!' % (name,)
 
-    @staticmethod
-    def sanitize(text):
-        """ Sanitize HTML to insert in an element context.
-        """
-        return (text.replace('&', '&amp;').
-                     replace('>', '&gt;').
-                     replace('<', '&lt;'))
-
     def initialize(self, flag):
         """ Set up the handler object.
         """
         self.flag = flag
+
+    def set_default_headers(self):
+        """ Do not send an informative Server header.
+        """
+        self.set_header('Server', 'CTF')
 
 
 def read_flag():
@@ -96,3 +96,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
