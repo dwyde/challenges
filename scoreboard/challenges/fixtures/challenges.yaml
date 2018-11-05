@@ -61,9 +61,9 @@
   model: challenges.challenge
   pk: 10
 - fields: {category: python, description: '<p>Python''s <code>yaml.load</code> is
-      dangerous, and can lead to code execution bugs. Can you get a flag from a <a
-      href="${STATIC_PATH}yam.py">constrained call</a> to this function?</p><p><code>nc
-      ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p>', display_name: Yam, flag: 'flag{see_deserialization_can_be_safe}',
+      dangerous, and can lead to code execution bugs. Can you <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">get</a>
+      a flag from a <a href="${STATIC_PATH}challenge.py">constrained call</a> to this
+      function?</p>', display_name: Yam, flag: 'flag{see_deserialization_can_be_safe}',
     name: python-yam, points: 250, port: '9011'}
   model: challenges.challenge
   pk: 11

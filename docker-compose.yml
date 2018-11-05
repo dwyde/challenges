@@ -39,7 +39,7 @@ services:
     ports: ['9010:7777']
   python-yam:
     build: challenges/python-yam
-    ports: ['9011:7777']
+    ports: ['9011:8888']
   python-format:
     build: challenges/python-format
     ports: ['9012:8888']
