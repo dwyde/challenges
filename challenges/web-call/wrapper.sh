@@ -19,4 +19,5 @@ ulimit -n 100
 # File size (blocks)
 ulimit -f 1024
 
-node call.js
+node call.js "$1"
+

@@ -1,23 +1,34 @@
+//
+// Call ``result = flag(null)`` in a JavaScript sandbox.
+//
+
+// The maximum length of user input
+const MAX_LENGTH = 70;
+
 // The user's code will stop running after TIMEOUT milliseconds.
-var TIMEOUT = 500;
+const TIMEOUT = 500;
 
 // The coveted flag.
-var THE_FLAG = (function () {
-    var fs = require('fs');
-    var contents = fs.readFileSync('flag').toString();
+const THE_FLAG = (function () {
+    const fs = require('fs');
+    const contents = fs.readFileSync('flag').toString();
     return contents.trim();
 }());
 
 // Run the user's JavaScript code in a sandbox.
 const runCode = function(code) {
-    const banned = /([\[\]\(\)]|call|apply|Symbol)/.exec(code);
+    const banned = /(\s|[\[\]\(\)]|call|apply|Symbol)/.exec(code);
     
     if (banned !== null) {
-        return 'Banned syntax: ' + banned[0];
+        return 'Banned syntax: "' + banned[0] + '"';
+    }
+
+    if (code.length > MAX_LENGTH) {
+        return 'Maximum input length is ' + MAX_LENGTH;
     }
 
     try {
-        var unique = {};
+        const unique = {};
         const vm = require('vm');
 
         const sandbox = {
@@ -48,11 +59,12 @@ const runCode = function(code) {
 // Main code
 //
 
-// Read stdin
-process.stdin.resume();
-var fs = require('fs');
-var userInput = fs.readFileSync(process.stdin.fd).toString().trim();
+// Read argv, run the user's code, and print the result.
+if (process.argv.length == 3) {
+    const userInput = process.argv[2];
+    const output = runCode(userInput);
+    console.log(output);
+} else {
+    console.log('Wrong argv length: ' + process.argv.length);
+}
 
-// Run the user's code, and print the result.
-const output = runCode(userInput);
-console.log(output);

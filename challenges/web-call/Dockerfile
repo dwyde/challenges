@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:10
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
@@ -10,7 +10,7 @@ RUN apt-get install -y socat
 RUN useradd --create-home challenge
 
 # Copy the app in
-COPY call.js flag wrapper.sh /home/challenge/
+COPY call.js server.js flag wrapper.sh /home/challenge/
 RUN chown root:root /home/challenge/call.js /home/challenge/flag /home/challenge/wrapper.sh
 RUN chmod 644 /home/challenge/call.js /home/challenge/flag
 RUN chmod 755 /home/challenge/wrapper.sh
@@ -22,6 +22,6 @@ USER challenge
 WORKDIR /home/challenge
 
 # Run the app
-EXPOSE 7777
-CMD ["socat", "tcp-l:7777,reuseaddr,fork", "system:'./wrapper.sh',stderr,nofork"]
+EXPOSE 8888
+CMD ["nodejs", "server.js"]
 
