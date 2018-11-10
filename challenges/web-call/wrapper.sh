@@ -11,7 +11,7 @@
 ulimit -t 1
 
 # Memory (KB)
-ulimit -m 300000
+ulimit -m 30000
 
 # Open files
 ulimit -n 100
