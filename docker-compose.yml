@@ -36,7 +36,7 @@ services:
     ports: ['9009:8888']
   python-sandbox:
     build: challenges/python-sandbox
-    ports: ['9010:7777']
+    ports: ['9010:8888']
   python-yam:
     build: challenges/python-yam
     ports: ['9011:8888']

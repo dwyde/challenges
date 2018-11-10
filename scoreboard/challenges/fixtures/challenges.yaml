@@ -52,11 +52,10 @@
     points: 300, port: '9009'}
   model: challenges.challenge
   pk: 9
-- fields: {category: python, description: '<p>Read a flag from a partially-implemented
-      Python <a href="/static/python-sandbox/sandbox.py">sandbox</a>.</p><p><code>echo
-      ''solution'' | python3 client.py ${PUBLIC_HOST} ${PUBLIC_PORT}</code></p>',
-    display_name: Sandbox, flag: 'flag{that_is_not_what_decorators_are_for}', name: python-sandbox,
-    points: 500, port: '9010'}
+- fields: {category: python, description: '<p>Read a flag from a <a href="${STATIC_PATH}sandbox.py">partially-implemented</a>
+      Python <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">sandbox</a>.</p>', display_name: Sandbox,
+    flag: 'flag{that_is_not_what_decorators_are_for}', name: python-sandbox, points: 500,
+    port: '9010'}
   model: challenges.challenge
   pk: 10
 - fields: {category: python, description: '<p>Python''s <code>yaml.load</code> is

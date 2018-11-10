@@ -22,7 +22,10 @@ def build_namespace():
     """ Restrict built-in functions, for `exec()`.
     """
     builtins = get_builtins()
-    banned_functions = ['eval', 'exec', '__import__', 'input', 'print']
+    banned_functions = [
+        'compile', 'eval', 'exec', 'exit', 'help',
+        '__import__', 'input', '__loader__', 'print'
+    ]
     for func in banned_functions:
         del builtins[func]
     return {'__builtins__': builtins}
@@ -67,3 +70,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
