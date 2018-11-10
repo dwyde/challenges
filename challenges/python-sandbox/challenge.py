@@ -3,6 +3,7 @@ A helper module for the python-sandbox CTF challenge.
 
 Sets up subprocess to enforce resource limits.
 """
+import resource
 import subprocess
 
 
@@ -21,5 +22,9 @@ def main(user_input):
 
 
 def setup():
-    pass
+    resource.setrlimit(resource.RLIMIT_CPU, (1, 1))
+    resource.setrlimit(resource.RLIMIT_RSS, (30000, 30000))
+    resource.setrlimit(resource.RLIMIT_FSIZE, (1024, 1024))
+    resource.setrlimit(resource.RLIMIT_NOFILE, (100, 100))
+    resource.setrlimit(resource.RLIMIT_NPROC, (0, 0))
 
