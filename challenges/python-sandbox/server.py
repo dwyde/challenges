@@ -34,12 +34,12 @@ class MainHandler(tornado.web.RequestHandler):
             '</html>',
         ]))
 
-    def post(self):
+    async def post(self):
         """ Handle HTTP POST: check the provided name.
         """
         user_input = self._read_user_input()
         try:
-            result = challenge.main(user_input)
+            result = await challenge.main(user_input)
         except Exception as ex:
             result = 'Error: {}'.format(ex)
         self._write_result(result)
