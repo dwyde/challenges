@@ -12,17 +12,24 @@ const FORM_HTML = `<!DOCTYPE html>
 <html>
 <head>
 <style>
-    p {white-space: pre-wrap}
+    body {
+        background: black;
+        color: lime;
+    }
+    input[type="text"] {
+        border: 3px solid lime;
+        background: yellow;
+    }
 </style>
 <meta charset="utf-8">
 </head>
 <body>
 <form>
-   <label for="input">Input:</label>
+   <label for="message">Message:</label>
    <br>
-   <input id="input" name="input">
+   <input id="message" name="message" type="text" autofocus>
    <br>
-   <input type="submit" value="Submit">
+   <input type="submit" value="Sign the guestbook!">
 </form>
 </body>
 </html>`;
@@ -76,7 +83,7 @@ const processInput = (response, userInput) => {
 // An HTTP server
 const server = http.createServer((request, response) => {
   const urlData = url.parse(request.url, true);
-  const userInput = urlData.query.input || '';
+  const userInput = urlData.query.message || '';
 
   if (userInput) {
     processInput(response, userInput);
