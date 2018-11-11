@@ -1,6 +1,6 @@
 {
     "basescore" : 400,
-    "desc" : "<p>Everybody enjoys signing <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">online guestbooks</a>, and webmasters love to read them.</p><p>Use an XSS bug to set the <code>XSS</code> JavaScript variable, then receive a flag.</p><p>As a security measure, you have a limited set of characters available: <code>&gt;</code>, <code>&lt;</code>, <code>A-Z</code>, <code>=</code>, <code>/</code>, and <code>-</code>.</p>",
+    "desc" : "<p>Everybody likes to sign <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">online guestbooks</a>, and webmasters love to read them.</p><p>Use an XSS bug to set the <code>XSS</code> JavaScript variable, then receive a flag.</p><p>As a security measure, you have a limited set of characters available: <code>&gt;</code>, <code>&lt;</code>, <code>A-Z</code>, <code>=</code>, <code>/</code>, and <code>-</code>.</p>",
     "displayname": "Guestbook",
     "flag": "flag{be_our_guest_be_our_guest}",
     "port": 8888,

@@ -91,7 +91,7 @@
     flag: 'flag{not_a_good_hiding_place}', name: web-hidden, points: 200, port: '9015'}
   model: challenges.challenge
   pk: 15
-- fields: {category: web, description: '<p>Everybody enjoys signing <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">online
+- fields: {category: web, description: '<p>Everybody likes to sign <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">online
       guestbooks</a>, and webmasters love to read them.</p><p>Use an XSS bug to set
       the <code>XSS</code> JavaScript variable, then receive a flag.</p><p>As a security
       measure, you have a limited set of characters available: <code>&gt;</code>,
