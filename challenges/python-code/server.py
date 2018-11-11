@@ -26,7 +26,7 @@ class MainHandler(tornado.web.RequestHandler):
             '<form method="POST">',
             '   <label for="input">Input:</label>',
             '   <br>',
-            '   <input id="input" name="input">',
+            '   <input id="input" autofocus name="input">',
             '   <br>',
             '   <input type="submit" value="Submit">',
             '</form>',

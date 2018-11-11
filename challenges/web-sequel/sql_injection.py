@@ -70,7 +70,7 @@ class MainHandler(tornado.web.RequestHandler):
     What color belt would you like?
     </p>
     <form>
-        <input name="belt_color">
+        <input name="belt_color" autofocus>
         <input type="submit" value="Choose!">
     </form>
     <p>{message}</p>
