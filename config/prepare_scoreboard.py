@@ -110,6 +110,14 @@ def main():
                     'ports': [str(BASE_PORT + i) + ':' + str(port)]
                 }
 
+        # Add extra data
+        if name == 'web-guestbook':
+            seccomp_path = os.path.join(THIS_DIR, 'seccomp', 'ctf.json')
+            with open(seccomp_path) as seccomp_fp:
+                seccomp_config = seccomp_fp.read()
+                security_options = 'seccomp:{}'.format(seccomp_config)
+                compose[name]['security_opt'] = [security_options]
+
     with open(FIXTURES_FILE, 'w') as outfile:
         yaml.dump(fixtures, outfile)
 
