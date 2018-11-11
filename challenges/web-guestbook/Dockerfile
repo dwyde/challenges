@@ -1,10 +1,15 @@
-FROM ubuntu:latest
+FROM ubuntu
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
 # Install extra software
 RUN apt-get update
-RUN apt-get install -y phantomjs
+RUN apt-get install nodejs npm -y
+RUN npm install -g puppeteer
+
+COPY apt-depends.txt /tmp
+RUN cat /tmp/apt-depends.txt | xargs apt install -y
+RUN rm /tmp/apt-depends.txt
 
 # Add the user
 RUN useradd --create-home challenge
@@ -20,7 +25,8 @@ USER challenge
 # Set our working directory
 WORKDIR /home/challenge
 
-ENV QT_QPA_PLATFORM offscreen
+ENV NODE_PATH /usr/local/lib/node_modules
 
 # Run the app
-CMD ["phantomjs", "xss.js"]
+CMD while true; do sleep 5; done
+

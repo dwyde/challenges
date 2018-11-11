@@ -92,13 +92,12 @@
   model: challenges.challenge
   pk: 15
 - fields: {category: web, description: '<p>Everybody enjoys signing <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">online
-      guestbooks</a>, and webmasters love to read them.</p><p>Your task is to use
-      an XSS bug to set the `XSS` JavaScript variable.  A bot monitors this value,
-      and will give you the flag if you succeed.</p><p>As a security measure, you
-      have a very limited set of characters available.  Specifically, you can use
-      <code>&gt;</code>, <code>&lt;</code>, <code>A-Z</code>, <code>=</code>, <code>/</code>,
-      and <code>-</code>.</p>', display_name: Guestbook, flag: 'flag{be_our_guest_be_our_guest}',
-    name: web-guestbook, points: 400, port: '9016'}
+      guestbooks</a>, and webmasters love to read them.</p><p>Use an XSS bug to set
+      the <code>XSS</code> JavaScript variable, then receive a flag.</p><p>As a security
+      measure, you have a limited set of characters available: <code>&gt;</code>,
+      <code>&lt;</code>, <code>A-Z</code>, <code>=</code>, <code>/</code>, and <code>-</code>.</p>',
+    display_name: Guestbook, flag: 'flag{be_our_guest_be_our_guest}', name: web-guestbook,
+    points: 400, port: '9016'}
   model: challenges.challenge
   pk: 16
 - fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Provide</a>
