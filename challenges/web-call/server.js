@@ -15,8 +15,6 @@ const server = http.createServer((req, res) => {
   requestUrl = url.parse(req.url, true);
   userInput = requestUrl.query.input || '';
 
-  console.log(userInput);
-
   execFile('./wrapper.sh', [userInput], (error, stdout, stderr) => {
     if (error) {
       writeOut(res, error);
