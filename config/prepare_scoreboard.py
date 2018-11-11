@@ -112,11 +112,9 @@ def main():
 
         # Add extra data
         if name == 'web-guestbook':
-            seccomp_path = os.path.join(THIS_DIR, 'seccomp', 'ctf.json')
-            with open(seccomp_path) as seccomp_fp:
-                seccomp_config = seccomp_fp.read()
-                security_options = 'seccomp:{}'.format(seccomp_config)
-                compose[name]['security_opt'] = [security_options]
+            seccomp_path = os.path.join('.', 'config', 'seccomp', 'ctf.json')
+            security_options = 'seccomp:{}'.format(seccomp_path)
+            compose[name]['security_opt'] = [security_options]
 
     with open(FIXTURES_FILE, 'w') as outfile:
         yaml.dump(fixtures, outfile)
