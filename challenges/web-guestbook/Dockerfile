@@ -14,19 +14,19 @@ RUN rm /tmp/apt-depends.txt
 # Add the user
 RUN useradd --create-home challenge
 
+# Set the working directory
+WORKDIR /home/challenge
+
 # Copy the app in
-COPY xss.js /home/challenge/
-RUN chown root:root /home/challenge/xss.js
-RUN chmod 644 /home/challenge/xss.js
+COPY server.js xss.js flag ./
+RUN chown root:challenge server.js xss.js flag
+RUN chmod 640 server.js xss.js flag
 
 # Switch users
 USER challenge
 
-# Set our working directory
-WORKDIR /home/challenge
-
 ENV NODE_PATH /usr/local/lib/node_modules
 
 # Run the app
-CMD while true; do sleep 5; done
+CMD nodejs server.js
 

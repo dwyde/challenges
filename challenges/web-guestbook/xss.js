@@ -1,12 +1,16 @@
 puppeteer = require('puppeteer');
 
-(async () => {
+const runBrowser = (async (userInput) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.setContent('<script>XSS=JSON</script>');
+  await page.setContent('<!--' + userInput + '-->');
   const xss = await page.evaluate(() => {
     return window.XSS;
   });
-  console.log('XSS: ' + xss);
   await browser.close();
-})();
+  return xss;
+});
+
+module.exports = {
+  runBrowser: runBrowser
+};
