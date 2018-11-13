@@ -1,97 +1,95 @@
-- fields: {category: web, description: '<p>Can you find the right number of <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">clicks</a>?</p><p>Reminder:
+- fields: {category: web, description: '<p>Can you find the right number of <a href="puzzle/">clicks</a>?</p><p>Reminder:
       the flag looks like <code>flag{...}</code>.</p>', display_name: Clicks, flag: 'flag{xrain_xor_xshine}',
     name: web-clicks, points: 100, port: '9001'}
   model: challenges.challenge
   pk: 1
-- fields: {category: crypto, description: '<p>There is a flag encoded in this <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">HTML
+- fields: {category: crypto, description: '<p>There is a flag encoded in this <a href="puzzle/">HTML
       page</a>.</p><p>One element doesn''t fit the pattern, but it''s still important!</p>',
     display_name: Tags, flag: 'flag{nonsense_next_zeiodvpsymwrkc}', name: crypto-tags,
-    points: 200, port: '9002'}
+    points: 250, port: '9002'}
   model: challenges.challenge
   pk: 2
-- fields: {category: web, description: '<p>Make yourself an administrator on this
-      <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">simple page</a>. You might want to
-      look at <a href="${STATIC_PATH}web-admin.py">the source</a>.</p>', display_name: Admin,
-    flag: 'flag{you_are_now_an_administrator}', name: web-admin, points: 200, port: '9003'}
+- fields: {category: web, description: <p>Make yourself an administrator on this <a
+      href="puzzle/">simple page</a>. You might want to look at <a href="/static/web-admin/web-admin.py">the
+      source</a>.</p>, display_name: Admin, flag: 'flag{you_are_now_an_administrator}',
+    name: web-admin, points: 250, port: '9003'}
   model: challenges.challenge
   pk: 3
-- fields: {category: crypto, description: '<p>Decode a string to play through the
-      moves of a <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">chess game</a>.</p>', display_name: Algebraic,
-    flag: 'flag{you_figured_out_the_coordinate_system}', name: crypto-algebraic, points: 100,
-    port: '9004'}
+- fields: {category: crypto, description: <p>Decode a string to play through the moves
+      of a <a href="puzzle/">chess game</a>.</p>, display_name: Algebraic, flag: 'flag{you_figured_out_the_coordinate_system}',
+    name: crypto-algebraic, points: 100, port: '9004'}
   model: challenges.challenge
   pk: 4
-- fields: {category: web, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}?input=hello">Run</a>
-      code equivalent to <code>result = flag(null)</code> in a <a href="${STATIC_PATH}web-call.js">JavaScript
+- fields: {category: web, description: '<p><a href="puzzle/?input=hello">Run</a> code
+      equivalent to <code>result = flag(null)</code> in a <a href="/static/web-call/web-call.js">JavaScript
       sandbox</a>.</p></code></p>', display_name: Call, flag: 'flag{who_do_you_call_sandbox_busters}',
-    name: web-call, points: 400, port: '9005'}
+    name: web-call, points: 450, port: '9005'}
   model: challenges.challenge
   pk: 5
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Create</a>
-      a Python literal that does not evaluate to zero.</p><p>View the <a href="${STATIC_PATH}python-zero.py">source</a>.</p>',
+- fields: {category: python, description: <p><a href="puzzle/">Create</a> a Python
+      literal that does not evaluate to zero.</p><p>View the <a href="/static/python-zero/python-zero.py">source</a>.</p>,
     display_name: Zero, flag: 'flag{congrats_you_literally_succeeded}', name: python-zero,
     points: 200, port: '9006'}
   model: challenges.challenge
   pk: 6
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Make</a>
-      a valid Python expression with a restricted character set.</p><p>Use exactly
-      these characters: <code>[[]]abcdefghijklmnopqrstuvwxyz</code></p><p>See the
-      <a href="${STATIC_PATH}python-alphabet.py">source</a>.</p>', display_name: Alphabet,
-    flag: 'flag{short_circuiting_logic}', name: python-alphabet, points: 200, port: '9007'}
+- fields: {category: python, description: '<p><a href="puzzle/">Make</a> a valid Python
+      expression with a restricted character set.</p><p>Use exactly these characters:
+      <code>[[]]abcdefghijklmnopqrstuvwxyz</code></p><p>See the <a href="/static/python-alphabet/python-alphabet.py">source</a>.</p>',
+    display_name: Alphabet, flag: 'flag{short_circuiting_logic}', name: python-alphabet,
+    points: 200, port: '9007'}
   model: challenges.challenge
   pk: 7
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Create</a>
-      an empty <code>set</code> in Python, with <a href="${STATIC_PATH}python-setup.py">strict
+- fields: {category: python, description: '<p><a href="puzzle/">Create</a> an empty
+      <code>set</code> in Python, with <a href="/static/python-setup/python-setup.py">strict
       constraints</a>.</p>', display_name: Setup, flag: 'flag{on_your_mark_get_set_go}',
     name: python-setup, points: 300, port: '9008'}
   model: challenges.challenge
   pk: 8
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Inject</a>
-      arguments into a system command.</p><p>See the <a href="${STATIC_PATH}python-arguments.py">source</a>.</p>',
+- fields: {category: python, description: <p><a href="puzzle/">Inject</a> arguments
+      into a system command.</p><p>See the <a href="/static/python-arguments/python-arguments.py">source</a>.</p>,
     display_name: Arguments, flag: 'flag{hope_the_argument_was_not_too_loud}', name: python-arguments,
     points: 300, port: '9009'}
   model: challenges.challenge
   pk: 9
-- fields: {category: python, description: '<p>Read a flag from a <a href="${STATIC_PATH}python-sandbox.py">partially-implemented</a>
-      Python <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">sandbox</a>.</p>', display_name: Sandbox,
-    flag: 'flag{that_is_not_what_decorators_are_for}', name: python-sandbox, points: 500,
-    port: '9010'}
+- fields: {category: python, description: <p>Read a flag from a <a href="/static/python-sandbox/python-sandbox.py">partially-implemented</a>
+      Python <a href="puzzle/">sandbox</a>.</p>, display_name: Sandbox, flag: 'flag{that_is_not_what_decorators_are_for}',
+    name: python-sandbox, points: 500, port: '9010'}
   model: challenges.challenge
   pk: 10
 - fields: {category: python, description: '<p>Python''s <code>yaml.load</code> is
-      dangerous, and can lead to code execution bugs. Can you <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">get</a>
-      a flag from a <a href="${STATIC_PATH}python-yam.py">constrained call</a> to
-      this function?</p>', display_name: Yam, flag: 'flag{see_deserialization_can_be_safe}',
+      dangerous, and can lead to code execution bugs. Can you <a href="puzzle/">get</a>
+      a flag from a <a href="/static/python-yam/python-yam.py">constrained call</a>
+      to this function?</p>', display_name: Yam, flag: 'flag{see_deserialization_can_be_safe}',
     name: python-yam, points: 250, port: '9011'}
   model: challenges.challenge
   pk: 11
 - fields: {category: python, description: '<p>Python''s curly-brace string formatting
       can be vulnerable to an <a href="http://lucumr.pocoo.org/2016/12/29/careful-with-str-format/">information
-      leakage bug</a>.</p><p>Can you <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">exploit</a>
-      the code <a href="${STATIC_PATH}python-format.py">here</a>?</p>', display_name: Format,
-    flag: 'flag{lines_format_the_front}', name: python-format, points: 300, port: '9012'}
+      leakage bug</a>.</p><p>Can you <a href="puzzle/">exploit</a> the code <a href="/static/python-format/python-format.py">here</a>?</p>',
+    display_name: Format, flag: 'flag{lines_format_the_front}', name: python-format,
+    points: 300, port: '9012'}
   model: challenges.challenge
   pk: 12
 - fields: {category: web, description: '<p>You''ve come across a martial arts belt
-      <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">inventory system</a>. Can you find
-      any way to dump its database?</p>', display_name: SQLi, flag: 'flag{prepared_statements_make_the_web_go_round}',
-    name: web-sqli, points: 100, port: '9013'}
+      <a href="puzzle/">inventory system</a>. Can you find any way to dump its database?</p>',
+    display_name: SQLi, flag: 'flag{prepared_statements_make_the_web_go_round}', name: web-sqli,
+    points: 100, port: '9013'}
   model: challenges.challenge
   pk: 13
-- fields: {category: web, description: '<p>The belt inventory server has been updated
-      to fix its previous bug. You would still LIKE to find a flaw in the <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">new
-      version</a>...</p>', display_name: Sequel, flag: 'flag{hope_you_like_wildcards}',
+- fields: {category: web, description: <p>The belt inventory server has been updated
+      to fix its previous bug. You would still LIKE to find a flaw in the <a href="puzzle/">new
+      version</a>...</p>, display_name: Sequel, flag: 'flag{hope_you_like_wildcards}',
     name: web-sequel, points: 150, port: '9014'}
   model: challenges.challenge
   pk: 14
 - fields: {category: web, description: '<p>This challenge''s flag is hidden somewhere
-      in a <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">web page</a>. Unfortunately for
-      you, the page source has been <a href="https://en.wikipedia.org/wiki/JSFuck">obfuscated</a>.</p><p>You
+      in a <a href="puzzle/">web page</a>. Unfortunately for you, the page source
+      has been <a href="https://en.wikipedia.org/wiki/JSFuck">obfuscated</a>.</p><p>You
       might want to use your browser''s Developer Tools feature.</p>', display_name: Hidden,
     flag: 'flag{not_a_good_hiding_place}', name: web-hidden, points: 200, port: '9015'}
   model: challenges.challenge
   pk: 15
-- fields: {category: web, description: '<p>Everybody likes to sign <a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">online
+- fields: {category: web, description: '<p>Everybody likes to sign <a href="puzzle/">online
       guestbooks</a>, and webmasters love to read them.</p><p>Use an XSS bug to set
       the <code>XSS</code> JavaScript variable, then receive a flag.</p><p>As a security
       measure, you have a limited set of characters available: <code>&gt;</code>,
@@ -100,27 +98,27 @@
     points: 400, port: '9016'}
   model: challenges.challenge
   pk: 16
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Provide</a>
-      a Python expression that evaluates to the <code>code</code> type.</p><p>Your
-      input can be up to 32 characters long, and may only include the following characters:</p><p><code>a-z
-      0-9 _ . : []</code></p><p>Use the <a href="${STATIC_PATH}python-code.py">source</a>.</p>',
+- fields: {category: python, description: '<p><a href="puzzle/">Provide</a> a Python
+      expression that evaluates to the <code>code</code> type.</p><p>Your input can
+      be up to 32 characters long, and may only include the following characters:</p><p><code>a-z
+      0-9 _ . : []</code></p><p>Use the <a href="/static/python-code/python-code.py">source</a>.</p>',
     display_name: Code, flag: 'flag{hope_this_was_your_type_of_challenge}', name: python-code,
     points: 200, port: '9017'}
   model: challenges.challenge
   pk: 17
-- fields: {category: crypto, description: '<p><a href="${STATIC_PATH}crypto-music.png">Music
-      notes</a> encode a 32-character flag.</p>', display_name: Music, flag: 'flag{cafebabefeedfacedeadbeeffadefade}',
+- fields: {category: crypto, description: <p><a href="/static/crypto-music/crypto-music.png">Music
+      notes</a> encode a 32-character flag.</p>, display_name: Music, flag: 'flag{cafebabefeedfacedeadbeeffadefade}',
     name: crypto-music, points: 50, port: '9018'}
   model: challenges.challenge
   pk: 18
-- fields: {category: crypto, description: '<p>A flag is embedded in <a href="${STATIC_PATH}crypto-tart">this
+- fields: {category: crypto, description: '<p>A flag is embedded in <a href="/static/crypto-tart/crypto-tart">this
       archive</a>. Can you extract it?</p>', display_name: Tart, flag: 'flag{but_the_files_are_all_empty}',
-    name: crypto-tart, points: 300, port: '9019'}
+    name: crypto-tart, points: 350, port: '9019'}
   model: challenges.challenge
   pk: 19
-- fields: {category: python, description: '<p><a href="//${PUBLIC_HOST}:${PUBLIC_PORT}">Send</a>
-      the desired input to an <a href="${STATIC_PATH}python-underscore.py">obfuscated</a>
-      Python program.</p>', display_name: Underscore, flag: 'flag{this_underscores_the_importance_of_readability}',
+- fields: {category: python, description: <p><a href="puzzle/">Send</a> the desired
+      input to an <a href="/static/python-underscore/python-underscore.py">obfuscated</a>
+      Python program.</p>, display_name: Underscore, flag: 'flag{this_underscores_the_importance_of_readability}',
     name: python-underscore, points: 350, port: '9020'}
   model: challenges.challenge
   pk: 20

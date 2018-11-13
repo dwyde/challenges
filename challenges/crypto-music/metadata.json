@@ -1,6 +1,6 @@
 {
     "basescore" : 50,
-    "desc" : "<p><a href=\"${STATIC_PATH}crypto-music.png\">Music notes</a> encode a 32-character flag.</p>",
+    "desc" : "<p><a href=\"/static/crypto-music/crypto-music.png\">Music notes</a> encode a 32-character flag.</p>",
     "displayname" : "Music",
     "flag": "flag{cafebabefeedfacedeadbeeffadefade}",
     "port": null,

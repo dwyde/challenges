@@ -1,6 +1,6 @@
 {
     "basescore" : 200,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Create</a> a Python literal that does not evaluate to zero.</p><p>View the <a href=\"${STATIC_PATH}python-zero.py\">source</a>.</p>",
+    "desc" : "<p><a href=\"puzzle/\">Create</a> a Python literal that does not evaluate to zero.</p><p>View the <a href=\"/static/python-zero/python-zero.py\">source</a>.</p>",
     "displayname" : "Zero",
     "flag": "flag{congrats_you_literally_succeeded}",
     "port": 8888,

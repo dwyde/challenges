@@ -1,7 +1,5 @@
 {% extends "challenges/base.html" %}
 
-{% load scoreboard %}
-
 {% block title %}<p><span class="highlight-text">{{ challenge.display_name }}</span></p>{% endblock %}
 
 {% block content %}
@@ -17,13 +15,13 @@
     Points: {{ challenge.points }} points<br>
 
     <div class="description">
-      {{ challenge | ctf_describe:request | safe }}
+      {{ challenge.description | safe }}
     </div>
 
     <form method="POST">
       Submit flag:
       {% if solved %}
-        <input type="text" name="flag" value="Already solved" disabled=disabled>
+        <input type="text" name="flag" value="Already solved" disabled>
       {% else %}
         <input type="text" name="flag" value="">
       {% endif %}

@@ -1,6 +1,6 @@
 {
     "basescore" : 200,
-    "desc" : "<p>This challenge's flag is hidden somewhere in a <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">web page</a>. Unfortunately for you, the page source has been <a href=\"https://en.wikipedia.org/wiki/JSFuck\">obfuscated</a>.</p><p>You might want to use your browser's Developer Tools feature.</p>",
+    "desc" : "<p>This challenge's flag is hidden somewhere in a <a href=\"puzzle/\">web page</a>. Unfortunately for you, the page source has been <a href=\"https://en.wikipedia.org/wiki/JSFuck\">obfuscated</a>.</p><p>You might want to use your browser's Developer Tools feature.</p>",
     "displayname" : "Hidden",
     "flag": "flag{not_a_good_hiding_place}",
     "port": 80,

@@ -1,6 +1,6 @@
 {
     "basescore" : 100,
-    "desc" : "<p>Can you find the right number of <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">clicks</a>?</p><p>Reminder: the flag looks like <code>flag{...}</code>.</p>",
+    "desc" : "<p>Can you find the right number of <a href=\"puzzle/\">clicks</a>?</p><p>Reminder: the flag looks like <code>flag{...}</code>.</p>",
     "displayname" : "Clicks",
     "flag": "flag{xrain_xor_xshine}",
     "port": 80,

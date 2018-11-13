@@ -1,6 +1,6 @@
 {
     "basescore" : 300,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Inject</a> arguments into a system command.</p><p>See the <a href=\"${STATIC_PATH}python-arguments.py\">source</a>.</p>",
+    "desc" : "<p><a href=\"puzzle/\">Inject</a> arguments into a system command.</p><p>See the <a href=\"/static/python-arguments/python-arguments.py\">source</a>.</p>",
     "displayname" : "Arguments",
     "flag": "flag{hope_the_argument_was_not_too_loud}",
     "port": 8888,

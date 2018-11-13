@@ -1,6 +1,6 @@
 {
     "basescore" : 300,
-    "desc" : "<p>Python's curly-brace string formatting can be vulnerable to an <a href=\"http://lucumr.pocoo.org/2016/12/29/careful-with-str-format/\">information leakage bug</a>.</p><p>Can you <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">exploit</a> the code <a href=\"${STATIC_PATH}python-format.py\">here</a>?</p>",
+    "desc" : "<p>Python's curly-brace string formatting can be vulnerable to an <a href=\"http://lucumr.pocoo.org/2016/12/29/careful-with-str-format/\">information leakage bug</a>.</p><p>Can you <a href=\"puzzle/\">exploit</a> the code <a href=\"/static/python-format/python-format.py\">here</a>?</p>",
     "displayname" : "Format",
     "flag": "flag{lines_format_the_front}",
     "port": 8888,

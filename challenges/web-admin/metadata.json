@@ -1,6 +1,6 @@
 {
-    "basescore" : 200,
-    "desc" : "<p>Make yourself an administrator on this <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">simple page</a>. You might want to look at <a href=\"${STATIC_PATH}web-admin.py\">the source</a>.</p>",
+    "basescore" : 250,
+    "desc" : "<p>Make yourself an administrator on this <a href=\"puzzle/\">simple page</a>. You might want to look at <a href=\"/static/web-admin/web-admin.py\">the source</a>.</p>",
     "displayname" : "Admin",
     "flag": "flag{you_are_now_an_administrator}",
     "port": 8888,
