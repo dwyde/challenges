@@ -80,7 +80,7 @@ def _init_yaml_ordereddict():
     yaml.add_representer(collections.OrderedDict, ordered_dict_presenter)
 
 
-def main():
+def challenge_config_and_static_files():
     _init_yaml_ordereddict()
 
     service_file = os.path.join(THIS_DIR, 'services.yml')
@@ -122,6 +122,12 @@ def main():
     with open(COMPOSE_FILE, 'w') as compose_file:
         compose_file.write('version: "2.1"\n')
         yaml.dump({'services': compose}, compose_file)
+
+
+def main():
+    """ Run the helper functions.
+    """
+    challenge_config_and_static_files()
 
 
 if __name__ == '__main__':
