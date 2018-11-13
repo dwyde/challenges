@@ -15,6 +15,8 @@ BASE_PORT = 9000
 
 SCOREBOARD_PORT = 9000
 
+DOCKER_IP = '172.17.0.1'
+
 THIS_DIR = os.path.dirname(__file__)
 
 BASE_DIR = os.path.join(THIS_DIR, '..')
@@ -123,11 +125,52 @@ def challenge_config_and_static_files():
         compose_file.write('version: "2.1"\n')
         yaml.dump({'services': compose}, compose_file)
 
+    return compose
+
+
+def build_nginx_config(compose):
+    """ Dynamically build nginx config from docker-compose.
+
+    Create a location block for each challenge.
+
+    This makes everything accessible on one port.
+    """
+    # Create a string template for location blocks.
+    location_template = '''
+    location /challenges/%(name)s/puzzle/ {
+        proxy_pass http://%(server)s:%(port)d/;
+    }'''
+
+    # Create data for each nginx location block.
+    sections = []
+    ignore = set(['scoreboard', 'database'])
+    for service, config in compose.items():
+        if service not in ignore:
+            port = config['ports'][0]
+            external_port = int(port.split(':')[0])
+            data = {'name': service, 'server': DOCKER_IP, 'port': external_port}
+            sections.append(location_template % data)
+
+    # Read the input template.
+    nginx_template = os.path.join(THIS_DIR, 'nginx_template.conf')
+    with open(nginx_template) as in_fp:
+       config_text = in_fp.read()
+
+    # Format output.
+    location_blocks = '\n'.join(sections)
+    config_output = config_text % {'location_blocks': location_blocks}
+
+    # Write the output config file.
+    output_nginx_config = os.path.join(BASE_DIR, 'scoreboard', 'nginx.conf')
+    with open(output_nginx_config, 'w') as out_fp:
+       out_fp.write(config_output)
+
 
 def main():
     """ Run the helper functions.
     """
-    challenge_config_and_static_files()
+    compose = challenge_config_and_static_files()
+    build_nginx_config(compose)
 
 
 if __name__ == '__main__':
