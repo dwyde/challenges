@@ -1,6 +1,6 @@
 {
     "basescore" : 250,
-    "desc" : "<p>Python's <code>yaml.load</code> is dangerous, and can lead to code execution bugs. Can you <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">get</a> a flag from a <a href=\"${STATIC_PATH}challenge.py\">constrained call</a> to this function?</p>",
+    "desc" : "<p>Python's <code>yaml.load</code> is dangerous, and can lead to code execution bugs. Can you <a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">get</a> a flag from a <a href=\"${STATIC_PATH}python-yam.py\">constrained call</a> to this function?</p>",
     "displayname" : "Yam",
     "flag": "flag{see_deserialization_can_be_safe}",
     "port": 8888,

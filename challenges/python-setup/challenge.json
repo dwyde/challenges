@@ -1,6 +1,6 @@
 {
     "basescore" : 300,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Create</a> an empty <code>set</code> in Python, with <a href=\"${STATIC_PATH}challenge.py\">strict constraints</a>.</p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Create</a> an empty <code>set</code> in Python, with <a href=\"${STATIC_PATH}python-setup.py\">strict constraints</a>.</p>",
     "displayname": "Setup",
     "flag": "flag{on_your_mark_get_set_go}",
     "port": 8888,

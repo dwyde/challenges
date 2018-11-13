@@ -1,6 +1,6 @@
 {
     "basescore" : 200,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Provide</a> a Python expression that evaluates to the <code>code</code> type.</p><p>Your input can be up to 32 characters long, and may only include the following characters:</p><p><code>a-z 0-9 _ . : []</code></p><p>Use the <a href=\"${STATIC_PATH}challenge.py\">source</a>.</p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Provide</a> a Python expression that evaluates to the <code>code</code> type.</p><p>Your input can be up to 32 characters long, and may only include the following characters:</p><p><code>a-z 0-9 _ . : []</code></p><p>Use the <a href=\"${STATIC_PATH}python-code.py\">source</a>.</p>",
     "displayname" : "Code",
     "flag": "flag{hope_this_was_your_type_of_challenge}",
     "port": 8888,

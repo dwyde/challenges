@@ -1,6 +1,6 @@
 {
     "basescore" : 300,
-    "desc" : "<p>A flag is embedded in <a href=\"${STATIC_PATH}archive\">this archive</a>. Can you extract it?</p>",
+    "desc" : "<p>A flag is embedded in <a href=\"${STATIC_PATH}crypto-tart\">this archive</a>. Can you extract it?</p>",
     "displayname" : "Tart",
     "flag": "flag{but_the_files_are_all_empty}",
     "port": null,

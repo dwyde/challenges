@@ -1,6 +1,6 @@
 {
     "basescore" : 200,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Make</a> a valid Python expression with a restricted character set.</p><p>Use exactly these characters: <code>[[]]abcdefghijklmnopqrstuvwxyz</code></p><p>See the <a href=\"${STATIC_PATH}challenge.py\">source</a>.</p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Make</a> a valid Python expression with a restricted character set.</p><p>Use exactly these characters: <code>[[]]abcdefghijklmnopqrstuvwxyz</code></p><p>See the <a href=\"${STATIC_PATH}python-alphabet.py\">source</a>.</p>",
     "displayname" : "Alphabet",
     "flag": "flag{short_circuiting_logic}",
     "port": 8888,

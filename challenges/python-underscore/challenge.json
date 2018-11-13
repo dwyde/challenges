@@ -1,6 +1,6 @@
 {
     "basescore" : 350,
-    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Send</a> the desired input to an <a href=\"${STATIC_PATH}challenge.py\">obfuscated</a> Python program.</p>",
+    "desc" : "<p><a href=\"//${PUBLIC_HOST}:${PUBLIC_PORT}\">Send</a> the desired input to an <a href=\"${STATIC_PATH}python-underscore.py\">obfuscated</a> Python program.</p>",
     "displayname" : "Underscore",
     "flag": "flag{this_underscores_the_importance_of_readability}",
     "port": 8888,
