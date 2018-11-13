@@ -23,7 +23,7 @@ RUN touch debug.log
 RUN chown scoreboard debug.log
 
 # Deploy the nginx configuration
-RUN ln -s /home/scoreboard/challenges_nginx.conf /etc/nginx/sites-enabled
+RUN ln -s /home/scoreboard/nginx.conf /etc/nginx/sites-enabled
 RUN cp /home/scoreboard/sudoers /etc/sudoers
 
 # Switch users
