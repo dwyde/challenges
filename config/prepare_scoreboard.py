@@ -33,7 +33,7 @@ def read_services(filename):
 
 
 def get_challenge_json(name):
-    path = os.path.join(BASE_DIR, 'challenges', name, 'challenge.json')
+    path = os.path.join(BASE_DIR, 'challenges', name, 'metadata.json')
     with open(path) as fp:
         return json.load(fp)
 
