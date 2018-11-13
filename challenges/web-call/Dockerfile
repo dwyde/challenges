@@ -9,17 +9,17 @@ RUN apt-get install -y socat
 # Add the user
 RUN useradd --create-home challenge
 
+# Set our working directory
+WORKDIR /home/challenge
+
 # Copy the app in
 COPY call.js server.js flag wrapper.sh /home/challenge/
-RUN chown root:root /home/challenge/call.js /home/challenge/flag /home/challenge/wrapper.sh
-RUN chmod 644 /home/challenge/call.js /home/challenge/flag
-RUN chmod 755 /home/challenge/wrapper.sh
+RUN chown root:challenge call.js flag wrapper.sh
+RUN chmod 640 call.js flag
+RUN chmod 750 wrapper.sh
 
 # Switch users
 USER challenge
-
-# Set our working directory
-WORKDIR /home/challenge
 
 # Run the app
 EXPOSE 8888

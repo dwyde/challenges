@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.6
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
@@ -8,14 +8,18 @@ RUN pip3 install tornado
 # Add the user
 RUN useradd -m challenge
 
+# Change directories
+WORKDIR /home/challenge
+
 # Copy in the app
 COPY challenge.py server.py flag /home/challenge/
-RUN chown root:root /home/challenge/*.py /home/challenge/flag
-RUN chmod 644 /home/challenge/*.py /home/challenge/flag
+
+# Update permissions
+RUN chown root:challenge challenge.py server.py flag
+RUN chmod 640 challenge.py server.py flag
 
 # Switch users
 USER challenge
-WORKDIR /home/challenge
 
 # Run the app
 EXPOSE 8888
