@@ -2,7 +2,8 @@
 
 {% block content %}
     <div id="info">
-        <p>Points: {{ points }}</p>
+        <p>Total Points: <span class="solved">{{ points }}</span></p>
+        <p>Challenges Solved: <span class="solved">{{ solved|length }}</span></p>
     </div>
     <table>
         <tr>
@@ -27,5 +28,4 @@
       </tr>
     {% endfor %}
     </table>
-    <br>
 {% endblock %}
