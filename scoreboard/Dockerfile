@@ -23,6 +23,11 @@ RUN chown -R scoreboard challenges/migrations/
 RUN touch debug.log
 RUN chown scoreboard debug.log
 
+# Allow Django to read and write secrets
+RUN mkdir /secrets
+RUN chown -R scoreboard:scoreboard /secrets
+RUN chmod -R 700 /secrets
+
 # Deploy the nginx configuration
 RUN ln -s /home/scoreboard/nginx.conf /etc/nginx/sites-enabled
 RUN cp /home/scoreboard/sudoers /etc/sudoers

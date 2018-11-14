@@ -9,18 +9,12 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
 import os
+import random
+import string
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^gmqth%t$oddt(fli3v@!)!h6xc@98freea30g($0gk8b=9-+i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -151,4 +145,45 @@ LOGGING = {
         },
     },
 }
+
+
+class SecretKeyManager:
+    """ Manage Django's SECRET_KEY on the filesystem.
+    """
+
+    # The filesystem path to the secret key
+    SECRET_KEY_PATH = '/secrets/django_secret_key.txt'
+
+    # The number of bytes to use for a secret key
+    SECRET_KEY_LENGTH = 64
+
+    def __init__(self, path=SECRET_KEY_PATH, key_byte_length=SECRET_KEY_LENGTH):
+        """ Write a secret key if one doesn't exist, then read it.
+        """
+        self.path = path
+        self.length = key_byte_length
+        # Create the secret key if it does not exist.
+        if not os.path.exists(self.path):
+            self.write_random_secret_key()
+        self.key = self.read_secret_key()
+
+    def write_random_secret_key(self):
+        """ Write a random secret key to a file.
+        """
+        rand_gen = random.SystemRandom()
+        choices = string.digits + string.ascii_letters + string.punctuation
+        data = [rand_gen.choice(choices) for _ in range(self.length)]
+        output = ''.join(data)
+        with open(self.path, 'w') as fp:
+            fp.write(output)
+
+    def read_secret_key(self):
+        """ Read the secret key from a file.
+        """
+        with open(self.path) as fp:
+            return fp.read()
+
+
+# Read the Django secret key from the filesystem.
+SECRET_KEY = SecretKeyManager().key
 

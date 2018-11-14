@@ -95,12 +95,13 @@ def challenge_config_and_static_files():
             compose[name] = {
                 'build': name,
                 'ports': [str(BASE_PORT) + ':' + str(SCOREBOARD_PORT)],
-                'depends_on': ['database']
+                'depends_on': ['database'],
+                'volumes': ['./data/secrets:/secrets']
             }
         elif name == 'database':
             compose[name] = {
                 'image': 'postgres',
-                'volumes': ['./db_data:/var/lib/postgresql/data']
+                'volumes': ['./data/database:/var/lib/postgresql/data']
             }
         else:
             entry, port = generate_fixture(name, i)
@@ -122,7 +123,7 @@ def challenge_config_and_static_files():
         yaml.dump(fixtures, outfile)
 
     with open(COMPOSE_FILE, 'w') as compose_file:
-        compose_file.write('version: "2.1"\n')
+        compose_file.write('version: "3.3"\n')
         yaml.dump({'services': compose}, compose_file)
 
     return compose
