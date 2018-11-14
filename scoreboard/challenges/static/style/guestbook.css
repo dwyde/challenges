@@ -1,0 +1,8 @@
+body {
+    background: black;
+    color: lime;
+}
+input[type="text"] {
+    border: 3px solid lime;
+    background: yellow;
+}

@@ -3,36 +3,21 @@ const url = require('url');
 
 const xss = require('./xss.js')
 
+// A host and port on which this server will listen
 const hostname = '0.0.0.0';
 const port = 8888;
 
+// The maximum length of input
 const MAX_LENGTH = 30;
 
-const FORM_HTML = `<!DOCTYPE html>
-<html>
-<head>
-<style>
-    body {
-        background: black;
-        color: lime;
-    }
-    input[type="text"] {
-        border: 3px solid lime;
-        background: yellow;
-    }
-</style>
-<meta charset="utf-8">
-</head>
-<body>
-<form>
+// HTML content to display an input form
+const FORM_HTML = `<form>
    <label for="message">Message:</label>
    <br>
    <input id="message" name="message" type="text" autofocus>
    <br>
    <input type="submit" value="Sign the guestbook!">
-</form>
-</body>
-</html>`;
+</form>`;
 
 // The flag string
 const FLAG = (() => {
@@ -45,7 +30,19 @@ const FLAG = (() => {
 const writeOut = function(res, message) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
-  res.end(`${message}\n`);
+  res.end(
+`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/style/challenge.css">
+<link rel="stylesheet" href="/static/style/guestbook.css">
+</head>
+<body>
+<p>${message}</p>
+</body>
+</html>`
+  );
 };
 
 const regexReject = (response, regex) => {

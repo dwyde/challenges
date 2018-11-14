@@ -15,12 +15,11 @@ class MainHandler(tornado.web.RequestHandler):
 
     def get(self):
         self.write('\n'.join([
+            '<!DOCTYPE html>',
             '<html>',
             '<head>',
-            '<style>',
-            '   p {white-space: pre-wrap}',
-            '</style>',
             '<meta charset="utf-8">',
+            '<link rel="stylesheet" href="/static/style/challenge.css">',
             '</head>',
             '<body>',
             '<form method="POST">',
@@ -58,13 +57,18 @@ class MainHandler(tornado.web.RequestHandler):
         """
         text_out = str(result)
         output = xml.sax.saxutils.escape(text_out)
-        self.write(output)
-
-    def set_default_headers(self):
-        """ Do not send an informative Server header.
-        """
-        self.set_header('Server', 'CTF')
-
+        self.write('\n'.join([
+            '<!DOCTYPE html>',
+            '<html>',
+            '<head>',
+            '<meta charset="utf-8">',
+            '<link rel="stylesheet" href="/static/style/challenge.css">',
+            '</head>',
+            '<body>',
+            '<p>{}</p>'.format(output),
+            '</body>',
+            '</html>',
+        ]))
 
 def make_app():
     """ Create the Tornado app.

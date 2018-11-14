@@ -7,8 +7,19 @@ const port = 8888;
 
 const writeOut = function(res, message) {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end(`${message}\n`);
+  res.setHeader('Content-Type', 'text/html');
+  res.end(
+`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/style/challenge.css">
+</head>
+<body>
+${message}
+</body>
+</html>`
+  );
 };
 
 const server = http.createServer((req, res) => {

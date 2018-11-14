@@ -63,6 +63,7 @@ class MainHandler(tornado.web.RequestHandler):
     <html>
     <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style/challenge.css">
     <title>SQL Injection Dojo</title>
     </head>
     <body>
