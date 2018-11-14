@@ -1,11 +1,13 @@
 body {
-  background: #C8DBEC;
+  background-color: #C8DBEC;
+  background-image: url('/static/images/fish.png');
+  background-position: .75em .75em;
   font-size: 1.4em;
   margin: 0;
 }
 
 #top {
-  background-color: #2D369C;
+  background: #2D369C;
 }
 
 header {
@@ -31,7 +33,12 @@ header p {
 }
 
 #main {
+  margin: 1em;
   padding: 1em;
+  background: #E9ECBC;
+  display: inline-block;
+  border-radius: 1.5em;
+  border: 3px solid #E0CC5F;
 }
 
 #info p {
@@ -54,11 +61,11 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #E9ECBC;
+  background-color: #ececec;
 }
 
 tr:nth-child(odd) {
-  background-color: #D7DB82;
+  background-color: #d2d2d2;
 }
 
 .highlight-text {
