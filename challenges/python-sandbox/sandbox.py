@@ -4,7 +4,7 @@ import sys
 
 
 # Limit the size of user input.
-MAX_INPUT_CHARACTERS = 200
+MAX_INPUT_CHARACTERS = 185
 
 
 def get_builtins():
