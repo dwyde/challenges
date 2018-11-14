@@ -1,11 +1,11 @@
 body {
-  background: #A3C3E0;
+  background: #C8DBEC;
   font-size: 1.4em;
   margin: 0;
 }
 
 #top {
-  color:  #A3C3E0;
+  color: #C8DBEC;
   background-color: #2D369C;
 }
 
@@ -69,8 +69,9 @@ tr:nth-child(odd) {
 }
 
 .description code {
-  background: #ddd;
+  background: #eee;
   padding: 0.2em;
+  border: 1px solid black;
 }
 
 input {
