@@ -17,24 +17,44 @@ class MainHandler(tornado.web.RequestHandler):
     """ Handle web requests: check a user's status.
     """
 
-    FORM_HTML = '\n'.join([
+    # Start of HTML
+    HTML_START = '\n'.join([
+        '<!DOCTYPE html>',
         '<html>',
-        '<body>',
+        '<head>',
+        '<meta charset="utf-8">',
+        '<link rel="stylesheet" href="/static/style/challenge.css">',
+        '</head>',
+        '<body>'
+    ])
+
+    # End of HTML
+    HTML_END = '\n'.join([
+        '</body>',
+        '</html>'
+    ])
+
+    # HTML form content
+    HTML_FORM = '\n'.join([
         '<form method="POST">',
         '   <label for="name">Who are you?</label>',
         '   <br>',
         '   <input id="name" name="name" autofocus>',
         '   <br>',
         '   <input type="submit">',
-        '</form>',
-        '</body>',
-        '</html>',
+        '</form>'
     ])
+
+    # The entire HTML form page
+    FORM_CONTENT = HTML_START + HTML_FORM + HTML_END
+
+    # A template for the output page
+    OUTPUT_CONTENT = HTML_START + '<p>{}</p>' + HTML_END
 
     def get(self):
         """ Handle HTTP GET: return a simple HTML form.
         """
-        self.write(self.FORM_HTML)
+        self.write(self.FORM_CONTENT)
 
     def post(self):
         """ Handle HTTP POST: check the provided name.
@@ -42,7 +62,8 @@ class MainHandler(tornado.web.RequestHandler):
         name = self.get_argument('name', '')
         result = self.check(name)
         output = xml.sax.saxutils.escape(result)
-        self.write(output)
+        response = self.OUTPUT_CONTENT.format(output)
+        self.write(response)
 
     def check(self, user_input):
         """ Check if a user is an admin that can see the flag.
@@ -63,11 +84,6 @@ class MainHandler(tornado.web.RequestHandler):
         """ Set up the handler object.
         """
         self.flag = flag
-
-    def set_default_headers(self):
-        """ Do not send an informative Server header.
-        """
-        self.set_header('Server', 'CTF')
 
 
 def read_flag():
