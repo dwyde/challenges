@@ -8,7 +8,7 @@ class AuthenticationMiddleware(object):
         self.get_response = get_response
 
     def __call__(self, request):
-        if not request.user.is_authenticated():
+        if not request.user.is_authenticated:
             model = get_user_model()
             user = model.objects.create_user()
             login(request, user)

@@ -24,7 +24,7 @@ class Challenge(models.Model):
     category = models.CharField(max_length=64, blank=True, null=True)
 
     def check_flag(self, user, flag):
-        if not user.is_authenticated():
+        if not user.is_authenticated:
             return 'Please authenticate.'
 
         expected = self.flag.lower()
@@ -39,7 +39,7 @@ class Challenge(models.Model):
 
     @classmethod
     def solved_by_user(cls, user):
-        if user.is_authenticated():
+        if user.is_authenticated:
             solved = cls.objects.filter(solved=user).values('pk', 'points')
             total_points = sum(challenge['points'] for challenge in solved)
             ids = set(challenge['pk'] for challenge in solved)

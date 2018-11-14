@@ -5,7 +5,8 @@ MAINTAINER David Wyde (david.wyde@gmail.com)
 # Install extra software
 RUN apt update
 RUN apt install -y python3-pip nginx nginx-extras sudo
-RUN pip3 install django==1.11.15 pyyaml psycopg2-binary uwsgi
+RUN pip3 install django pyyaml psycopg2-binary uwsgi
+RUN apt remove -y python3-pip
 
 # Add the user
 RUN useradd --create-home scoreboard
