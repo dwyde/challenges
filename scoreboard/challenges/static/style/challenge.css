@@ -11,7 +11,8 @@ body {
     display: inline-block;
     padding: 0 1em;
     border-radius: 1.5em;
-    border: 3px solid #D4B50F;
+    border: 3px solid #D3BB36;
+    min-width: 30em;
 }
 
 form {

@@ -1,25 +1,23 @@
 {% extends "challenges/base.html" %}
 
-{% block title %}<p><span class="highlight-text">{{ challenge.display_name }}</span></p>{% endblock %}
 
 {% block content %}
-
-  Status:
+<h1>{{ challenge.display_name }}</h1>
+<p>Status:
     {% if solved is True %}
       <span class="solved">Solved</span>
     {% else %}
       <span class="unsolved">Not Solved</span>
     {% endif %}
-    <br>
-
-    Points: {{ challenge.points }} points<br>
+<br>Points: {{ challenge.points }}
+</p>
 
     <div class="description">
       {{ challenge.description | safe }}
     </div>
 
     <form method="POST">
-      Submit flag:
+        <label for="flag">Submit flag:</label>
       {% if solved %}
         <input type="text" name="flag" value="Already solved" disabled>
       {% else %}

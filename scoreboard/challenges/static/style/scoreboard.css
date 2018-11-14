@@ -33,21 +33,22 @@ header p {
 }
 
 #main {
+  min-width: 30em;
   margin: 1em;
-  padding: 1em;
+  padding: 1em 1em 0;
   background: #E9ECBC;
   display: inline-block;
   border-radius: 1.5em;
-  border: 3px solid #E0CC5F;
+  border: 3px solid #D3BB36;
 }
 
 #info p {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 table {
   border-collapse: collapse;
-  margin-top: 1em;
+  margin: 1em 0;
 }
 
 table, th, td {
@@ -60,18 +61,18 @@ td {
   width: 25%;
 }
 
-tr:nth-child(even) {
-  background-color: #ececec;
-}
-
 tr:nth-child(odd) {
-  background-color: #d2d2d2;
+  background: #D3BB36;
 }
 
-.highlight-text {
+tr:nth-child(even) {
+  background: #dfCC5F;
+}
+
+#main h1 {
   font-weight: bold;
   font-size: 1.2em;
-  padding-top: 1em;
+  margin: 0em;
 }
 
 .description {

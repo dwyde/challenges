@@ -1,13 +1,8 @@
 {% extends "challenges/base.html" %}
 
-{% block title %}<p><span class="highlight-text">{{ challenge.display_name }}</span></p>{% endblock %}
-
 {% block content %}
-
+    <h1>{{ challenge.display_name }} - Solve</h1>
     <p>Submitted flag: {{ flag }}</p>
-  
     <p><strong>{{ message }}</strong></p>
-
     <p>Back to the <a href="..">scoreboard</a>.</p>
-
 {% endblock %}
