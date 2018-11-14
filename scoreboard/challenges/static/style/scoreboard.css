@@ -34,6 +34,7 @@ header p {
 
 #main {
   min-width: 30em;
+  max-width: 50em;
   margin: 1em;
   padding: 1em 1em 0;
   background: #E9ECBC;
@@ -80,7 +81,7 @@ tr:nth-child(even) {
   margin: 2em 0;
 }
 
-.description code {
+code {
   background: #eee;
   padding: 0.2em;
   border: 1px solid black;
