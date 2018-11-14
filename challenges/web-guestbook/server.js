@@ -12,11 +12,11 @@ const MAX_LENGTH = 30;
 
 // HTML content to display an input form
 const FORM_HTML = `<form>
-   <label for="message">Message:</label>
+   <label for="message">Write a message:</label>
    <br>
    <input id="message" name="message" type="text" autofocus>
    <br>
-   <input type="submit" value="Sign the guestbook!">
+   <input type="submit" value="Click here to sign the guestbook!">
 </form>`;
 
 // The flag string
@@ -39,7 +39,7 @@ const writeOut = function(res, message) {
 <link rel="stylesheet" href="/static/style/guestbook.css">
 </head>
 <body>
-<p>${message}</p>
+<div>${message}</div>
 </body>
 </html>`
   );

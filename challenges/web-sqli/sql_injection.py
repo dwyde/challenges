@@ -66,6 +66,7 @@ class MainHandler(tornado.web.RequestHandler):
     <title>SQL Injection Dojo</title>
     </head>
     <body>
+    <div id="wrapper">
     <p>
     What color belt would you like?
     </p>
@@ -74,6 +75,7 @@ class MainHandler(tornado.web.RequestHandler):
         <input type="submit" value="Choose!">
     </form>
     <p>{message}</p>
+    </div>
     </body>
     </html>
     '''

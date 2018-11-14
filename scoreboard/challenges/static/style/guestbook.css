@@ -2,7 +2,18 @@ body {
     background: black;
     color: lime;
 }
-input[type="text"] {
+
+input {
+    margin: 1em 0 0 0;
+    padding: 0.5em;
+    color: black;
     border: 3px solid lime;
+}
+
+input[type="text"] {
     background: yellow;
+}
+
+input[type="submit"] {
+    background: #aaa;
 }

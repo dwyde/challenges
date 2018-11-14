@@ -25,11 +25,13 @@ class MainHandler(tornado.web.RequestHandler):
         '<meta charset="utf-8">',
         '<link rel="stylesheet" href="/static/style/challenge.css">',
         '</head>',
-        '<body>'
+        '<body>',
+        '<div id="wrapper">'
     ])
 
     # End of HTML
     HTML_END = '\n'.join([
+        '</div>',
         '</body>',
         '</html>'
     ])
@@ -41,7 +43,7 @@ class MainHandler(tornado.web.RequestHandler):
         '   <br>',
         '   <input id="name" name="name" autofocus>',
         '   <br>',
-        '   <input type="submit">',
+        '   <input type="submit" value="Say hello">',
         '</form>'
     ])
 

@@ -25,6 +25,7 @@ class MainHandler(tornado.web.RequestHandler):
             '<link rel="stylesheet" href="/static/style/challenge.css">',
             '</head>',
             '<body>',
+            '<div id="wrapper">',
             '<form method="POST">',
             '   <label for="input">Input:</label>',
             '   <br>',
@@ -32,6 +33,7 @@ class MainHandler(tornado.web.RequestHandler):
             '   <br>',
             '   <input type="submit" value="Submit">',
             '</form>',
+            '</div>',
             '</body>',
             '</html>',
         ]))
@@ -68,7 +70,9 @@ class MainHandler(tornado.web.RequestHandler):
             '<link rel="stylesheet" href="/static/style/challenge.css">',
             '</head>',
             '<body>',
+            '<div id="wrapper">',
             '<p>{}</p>'.format(output),
+            '</div>',
             '</body>',
             '</html>',
         ]))

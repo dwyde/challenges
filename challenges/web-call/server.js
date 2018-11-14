@@ -16,7 +16,9 @@ const writeOut = function(res, message) {
 <link rel="stylesheet" href="/static/style/challenge.css">
 </head>
 <body>
-${message}
+<div id="wrapper">
+<p>${message}</p>
+</div>
 </body>
 </html>`
   );
