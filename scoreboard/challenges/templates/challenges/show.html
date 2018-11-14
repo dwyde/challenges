@@ -23,7 +23,7 @@
       {% if solved %}
         <input type="text" name="flag" value="Already solved" disabled>
       {% else %}
-        <input type="text" name="flag" value="">
+        <input type="text" name="flag" value="" autofocus>
       {% endif %}
       {% csrf_token %}
     </form>
