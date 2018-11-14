@@ -57,7 +57,7 @@
   model: challenges.challenge
   pk: 10
 - fields: {category: python, description: '<p>Python''s <code>yaml.load</code> is
-      dangerous, and can lead to code execution bugs. Can you <a href="puzzle/">get</a>
+      dangerous, and can lead to code execution bugs.</p><p>Can you <a href="puzzle/">get</a>
       a flag from a <a href="/static/python-yam/python-yam.py">constrained call</a>
       to this function?</p>', display_name: Yam, flag: 'flag{see_deserialization_can_be_safe}',
     name: python-yam, points: 250, port: '9011'}
