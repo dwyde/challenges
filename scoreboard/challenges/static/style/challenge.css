@@ -10,7 +10,7 @@ body {
   min-width: 30em;
   max-width: 50em;
   margin: 1em;
-  padding: 1em 1em 0;
+  padding: 0 1em;
   background: #E9ECBC;
   display: inline-block;
   border-radius: 1.5em;
