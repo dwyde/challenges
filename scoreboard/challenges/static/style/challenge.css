@@ -1,3 +1,9 @@
 body {
-    background: #C8DBEC;
+    background-color: #C8DBEC;
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+p {
+    margin: 0;
 }
