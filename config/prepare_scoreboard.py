@@ -2,7 +2,7 @@
 """
 FIXME: needs code cleanup...
 """
-
+import argparse
 import collections
 import json
 import os
@@ -11,11 +11,9 @@ import shutil
 import yaml
 
 
+LOCALHOST = '127.0.0.1'
+
 BASE_PORT = 9000
-
-SCOREBOARD_PORT = 9000
-
-DOCKER_IP = '172.17.0.1'
 
 THIS_DIR = os.path.dirname(__file__)
 
@@ -82,7 +80,7 @@ def _init_yaml_ordereddict():
     yaml.add_representer(collections.OrderedDict, ordered_dict_presenter)
 
 
-def challenge_config_and_static_files():
+def challenge_config_and_static_files(use_tls):
     _init_yaml_ordereddict()
 
     service_file = os.path.join(THIS_DIR, 'services.yml')
@@ -94,7 +92,7 @@ def challenge_config_and_static_files():
         if name == 'scoreboard':
             compose[name] = {
                 'build': name,
-                'ports': [str(BASE_PORT) + ':' + str(SCOREBOARD_PORT)],
+                'ports': ['80:80', '443:443'] if use_tls else ['80:80'],
                 'depends_on': ['database'],
                 'volumes': ['./data/secrets:/secrets']
             }
@@ -110,7 +108,9 @@ def challenge_config_and_static_files():
             if port:
                 compose[name] = {
                     'build': os.path.join('challenges', name),
-                    'ports': [str(BASE_PORT + i) + ':' + str(port)]
+                    'ports': [
+                        LOCALHOST + ':' + str(BASE_PORT + i) + ':' + str(port)
+                    ]
                 }
 
         # Add extra data
@@ -129,7 +129,7 @@ def challenge_config_and_static_files():
     return compose
 
 
-def build_nginx_config(compose):
+def build_nginx_config(compose, use_tls):
     """ Dynamically build nginx config from docker-compose.
 
     Create a location block for each challenge.
@@ -148,12 +148,15 @@ def build_nginx_config(compose):
     for service, config in compose.items():
         if service not in ignore:
             port = config['ports'][0]
-            external_port = int(port.split(':')[0])
-            data = {'name': service, 'server': DOCKER_IP, 'port': external_port}
+            external_port = int(port.split(':')[2])
+            data = {'name': service, 'server': service, 'port': external_port}
             sections.append(location_template % data)
 
     # Read the input template.
-    nginx_template = os.path.join(THIS_DIR, 'nginx_template.conf')
+    if use_tls:
+        nginx_template = os.path.join(THIS_DIR, 'tls_nginx_template.conf')
+    else:
+        nginx_template = os.path.join(THIS_DIR, 'nginx_template.conf')
     with open(nginx_template) as in_fp:
        config_text = in_fp.read()
 
@@ -167,12 +170,24 @@ def build_nginx_config(compose):
        out_fp.write(config_output)
 
 
+def parse_args():
+    """ Parse command line arguments.
+    """
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--tls', action='store_true',
+                        help='use TLS for the HTTP server')
+    return parser.parse_args()
+
+
 def main():
     """ Run the helper functions.
     """
-    compose = challenge_config_and_static_files()
-    build_nginx_config(compose)
+    args = parse_args()
+    use_tls = args.tls
+    compose = challenge_config_and_static_files(use_tls)
+    build_nginx_config(compose, use_tls)
 
 
 if __name__ == '__main__':
     main()
+

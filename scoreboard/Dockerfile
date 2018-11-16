@@ -17,9 +17,14 @@ WORKDIR /home/scoreboard
 
 # Copy the app in
 COPY . /home/scoreboard/
-RUN chown -R scoreboard challenges/migrations/
 
-# Allow the scoreboard user to write logs
+# Move nginx cert and key
+RUN mv under-the-ctf.* /etc/nginx
+RUN chown www-data:root /etc/nginx/under-the-ctf.*
+RUN chmod 440 /etc/nginx/under-the-ctf.*
+
+# Allow the scoreboard user to write files
+RUN chown -R scoreboard challenges/migrations/
 RUN touch debug.log
 RUN chown scoreboard debug.log
 
@@ -29,7 +34,7 @@ RUN chown -R scoreboard:scoreboard /secrets
 RUN chmod -R 700 /secrets
 
 # Deploy the nginx configuration
-RUN ln -s /home/scoreboard/nginx.conf /etc/nginx/sites-enabled
+RUN cp /home/scoreboard/nginx.conf /etc/nginx/sites-enabled/default
 RUN cp /home/scoreboard/sudoers /etc/sudoers
 
 # Switch users
