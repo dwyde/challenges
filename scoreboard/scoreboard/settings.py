@@ -36,8 +36,6 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'challenges.middleware.AuthenticationMiddleware',
     #'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -52,7 +50,6 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
             ],
         },
     },
@@ -112,18 +109,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Cookies expire after roughly 10 years.
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 10
 
 STATIC_URL = '/static/'
 
-# Scoreboard-specific settings
-AUTH_USER_MODEL = 'challenges.AutoUser'
-
-# Roughly 10 years
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 365 * 10
-
-
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+# Log to a file.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
