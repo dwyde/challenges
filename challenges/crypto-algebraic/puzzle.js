@@ -2,7 +2,7 @@
 var onChange = function(oldPos, newPos) {
     var fen = ChessBoard.objToFen(newPos);
     $.ajax({
-        url: '/fen',
+        url: 'fen',
         data: {fen: fen},
         success: function (data) {
             if (data !== '') {
