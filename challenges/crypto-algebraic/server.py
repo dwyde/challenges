@@ -20,24 +20,11 @@ class FenHandler(tornado.web.RequestHandler):
         if fen == 'r1b1k2r/ppppqppp/2n5/8/1PP2B2/3n1N2/1P1NPPPP/R2QKB1R':
             self.write(FLAG)
 
-    def set_default_headers(self):
-        """ Do not send an informative Server header.
-        """
-        self.set_header('Server', 'CTF')
-
-
-class FileHandler(tornado.web.StaticFileHandler):
-
-    def set_default_headers(self):
-        """ Do not send an informative Server header.
-        """
-        self.set_header('Server', 'CTF')
-
 
 if __name__ == '__main__':
     application = tornado.web.Application([
         (r'/fen', FenHandler),
-        (r'/(.*)', FileHandler,
+        (r'/(.*)', tornado.web.StaticFileHandler,
             {'path': THIS_FOLDER, 'default_filename': 'index.html'}),
     ])
     application.listen(8888)
