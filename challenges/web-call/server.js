@@ -14,6 +14,7 @@ const writeOut = function(res, message) {
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="/static/style/challenge.css">
+<title>Under The CTF | Challenge</title>
 </head>
 <body>
 <div id="wrapper">
