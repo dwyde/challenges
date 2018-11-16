@@ -38,10 +38,10 @@ header p {
   max-width: 50em;
   margin: 1em;
   padding: 1em 1em 0;
-  background: #E9ECBC;
+  background: #F5F6DF;
   display: inline-block;
   border-radius: 1.5em;
-  border: 3px solid #D3BB36;
+  border: 3px solid #F0DD75;
 }
 
 #info p {
@@ -59,15 +59,15 @@ table, th, td {
   text-align:center;
 }
 
-td {
+th, td {
   width: 25%;
 }
 
-tr:nth-child(odd) {
-  background: #d2d2d2;
+tr:nth-child(even) {
+  background: #fbfbfb;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background: #ececec;
 }
 

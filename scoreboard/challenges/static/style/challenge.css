@@ -11,10 +11,10 @@ body {
   max-width: 50em;
   margin: 1em;
   padding: 0 1em;
-  background: #E9ECBC;
+  background: #F5F6DF;
   display: inline-block;
   border-radius: 1.5em;
-  border: 3px solid #D3BB36;
+  border: 3px solid #F0DD75;
 }
 
 form {
