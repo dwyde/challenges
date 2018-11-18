@@ -101,9 +101,13 @@ code {
 }
 
 input {
-  font-family: monospace;
-  border: 1px solid black;
   padding: .4em;
+}
+
+input[type="text"] {
+  border: 1px solid black;
+  font-family: monospace;
+  background: #fbfbfb;
 }
 
 .solved {

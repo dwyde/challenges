@@ -20,3 +20,7 @@ body {
 form {
   margin: 1em 0;
 }
+
+input[type="text"] {
+  background: #fbfbfb;
+}
