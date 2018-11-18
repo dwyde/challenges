@@ -33,6 +33,22 @@ header p {
   margin: 0;
 }
 
+.fish {
+  color: #3FB8F3;
+}
+
+.octopus {
+  color: #CD73E8;
+}
+
+.tropical {
+  color: gold;
+}
+
+.turtle {
+  color: green;
+}
+
 #main {
   min-width: 30em;
   max-width: 50em;
