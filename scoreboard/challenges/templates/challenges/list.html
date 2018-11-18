@@ -1,32 +1,32 @@
 {% extends "challenges/base.html" %}
 {% block title %} | Challenges{% endblock %}
 {% block content %}
-    <h1>Challenges</h1>
-    <div id="info">
-        <p>Total Points: <span class="solved">{{ points }}</span>
-        <br>Challenges Solved: <span class="solved">{{ solved|length }}</span></p>
-    </div>
-    <table>
-        <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Points</th>
-            <th>Solved?</th>
-        </tr>
-    {% for challenge in challenges %}
-      <tr>
-        {% if challenge.pk in solved %}
-        <td><a href="{{ challenge.name }}" class="solved">{{ challenge.display_name }}</a></td>
-        <td><span class="solved">{{ challenge.category | title }}</span></td>
-        <td class="points"><span class="solved">{{ challenge.points }}</span></td>
-        <td><span class="solved">Yes</span></td>
-        {% else %}
-        <td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
-        <td>{{ challenge.category | title }}</td>
-        <td class="points">{{ challenge.points }}</td>
-        <td>No</td>
-        {% endif %}
-      </tr>
-    {% endfor %}
-    </table>
+<h1>Challenges</h1>
+<div id="info">
+<p>Total Points: <span class="solved">{{ points }}</span>
+<br>Challenges Solved: <span class="solved">{{ solved|length }}</span></p>
+</div>
+<table>
+<tr>
+<th>Title</th>
+<th>Category</th>
+<th>Points</th>
+<th>Solved?</th>
+</tr>
+{% for challenge in challenges %}
+<tr>
+{% if challenge.pk in solved %}
+<td><a href="{{ challenge.name }}" class="solved">{{ challenge.display_name }}</a></td>
+<td><span class="solved">{{ challenge.category | title }}</span></td>
+<td class="points"><span class="solved">{{ challenge.points }}</span></td>
+<td><span class="solved">Yes</span></td>
+{% else %}
+<td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
+<td>{{ challenge.category | title }}</td>
+<td class="points">{{ challenge.points }}</td>
+<td>No</td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
 {% endblock %}
