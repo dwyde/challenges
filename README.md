@@ -34,3 +34,14 @@ HTTPS for the web server. Place the certificate chain at
 `scoreboard/under-the-ctf.chain` and the key at 
 `scoreboard/under-the-ctf.key`.
 
+### Vagrant
+The CTF should also run with Vagrant, for deployment inside a VM.
+The Vagrantfile will tweak the docker-compose file and the `web-guestbook`
+challenge, but things should work out of the box.
+
+```
+sudo apt install vagrant virtualbox
+vagrant up --provision
+curl localhost:8080
+```
+
