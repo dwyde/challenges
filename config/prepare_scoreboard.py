@@ -80,7 +80,7 @@ def _init_yaml_ordereddict():
     yaml.add_representer(collections.OrderedDict, ordered_dict_presenter)
 
 
-def challenge_config_and_static_files(use_tls):
+def challenge_config_and_static_files(use_tls, use_vagrant):
     _init_yaml_ordereddict()
 
     service_file = os.path.join(THIS_DIR, 'services.yml')
@@ -97,9 +97,13 @@ def challenge_config_and_static_files(use_tls):
                 'volumes': ['./data/secrets:/secrets']
             }
         elif name == 'database':
+            if use_vagrant:
+                db_share = '/home/vagrant/database'
+            else:
+                db_share = './data/database'
             compose[name] = {
                 'image': 'postgres',
-                'volumes': ['./data/database:/var/lib/postgresql/data']
+                'volumes': [db_share + ':/var/lib/postgresql/data']
             }
         else:
             entry, port = generate_fixture(name, i)
@@ -176,6 +180,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('--tls', action='store_true',
                         help='use TLS for the HTTP server')
+    parser.add_argument('--vagrant', action='store_true',
+                        help='use Vagrant to provision the application')
     return parser.parse_args()
 
 
@@ -184,7 +190,8 @@ def main():
     """
     args = parse_args()
     use_tls = args.tls
-    compose = challenge_config_and_static_files(use_tls)
+    use_vagrant = args.vagrant
+    compose = challenge_config_and_static_files(use_tls, use_vagrant)
     build_nginx_config(compose, use_tls)
 
 

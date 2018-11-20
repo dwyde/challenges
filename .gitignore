@@ -3,3 +3,5 @@
 __pycache__
 data/database
 data/secrets/django_secret_key.txt
+.vagrant/
+*-cloudimg-console.log
