@@ -16,12 +16,12 @@
 {% for challenge in challenges %}
 <tr>
 {% if challenge.pk in solved %}
-<td><a href="{{ challenge.name }}" class="solved">{{ challenge.display_name }}</a></td>
+<td><a href="{{ challenge.name }}/" class="solved">{{ challenge.display_name }}</a></td>
 <td><span class="solved">{{ challenge.category | title }}</span></td>
 <td class="points"><span class="solved">{{ challenge.points }}</span></td>
 <td><span class="solved">Yes</span></td>
 {% else %}
-<td><a href="{{ challenge.name }}">{{ challenge.display_name }}</a></td>
+<td><a href="{{ challenge.name }}/">{{ challenge.display_name }}</a></td>
 <td>{{ challenge.category | title }}</td>
 <td class="points">{{ challenge.points }}</td>
 <td>No</td>
