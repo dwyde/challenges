@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^challenges/$', views.list_challenges),
     url(r'^challenges/([-a-z]+)/$', views.show_challenge),
+    url(r'^error/bad-request/$', error_views.handler400),
     url(r'^error/page-not-found/$', error_views.handler404),
     url(r'^error/server-error/$', error_views.handler500)
 ]
