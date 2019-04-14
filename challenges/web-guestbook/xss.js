@@ -7,6 +7,7 @@ const runBrowser = (async (userInput) => {
   const xss = await page.evaluate(() => {
     return window.XSS;
   });
+  await page.close();
   await browser.close();
   return xss;
 });
