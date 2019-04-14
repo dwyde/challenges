@@ -1,4 +1,4 @@
-FROM node:10
+FROM node
 
 MAINTAINER David Wyde (david.wyde@gmail.com)
 
