@@ -8,6 +8,8 @@ services:
   database:
     image: postgres
     volumes: ['./data/database:/var/lib/postgresql/data']
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
   web-clicks:
     build: challenges/web-clicks
     ports: ['127.0.0.1:9001:80']

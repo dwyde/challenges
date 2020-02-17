@@ -5,7 +5,7 @@ MAINTAINER David Wyde (david.wyde@gmail.com)
 # Install extra software
 RUN apt update
 RUN apt install -y python3-pip nginx nginx-extras sudo
-RUN pip3 install django pyyaml psycopg2-binary uwsgi
+RUN pip3 install django==2.2 pyyaml psycopg2-binary uwsgi
 RUN apt remove -y python3-pip
 
 # Add the user
@@ -17,6 +17,9 @@ WORKDIR /home/scoreboard
 
 # Copy the app in
 COPY . /home/scoreboard/
+
+# Hack to allow recent Postgres to start: no root password
+ENV POSTGRES_HOST_AUTH_METHOD trust
 
 # Move nginx cert and key
 RUN mv under-the-ctf.* /etc/nginx
