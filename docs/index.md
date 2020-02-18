@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+---
+---
 <html lang="en">
   <head>
     <title>Under the CTF</title>
