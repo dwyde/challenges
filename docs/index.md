@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 <html lang="en">
   <head>
