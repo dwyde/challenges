@@ -1,7 +1,4 @@
-# Under The CTF
-This code runs at https://underthectf.com.
-
-# Capture The Flag (CTF) Challenges
+# Under the CTF
 This repository contains standalone software puzzles, some of which are security-themed.
 
 For instructions on how to set up and access the simple dashboard, please see
